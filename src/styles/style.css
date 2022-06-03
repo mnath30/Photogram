@@ -1,0 +1,27 @@
+@import url("./variables.css");
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.padding-sm {
+  padding: 0.4rem;
+}
+
+.hr {
+  border-bottom: 1px solid var(--grey-border);
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-shade);
+}
