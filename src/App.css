@@ -1,3 +1,6 @@
+@import url("./styles/style.css");
 .App {
   text-align: center;
+  background-color: var(--background-color);
+  height: 100%;
 }

@@ -1,0 +1,49 @@
+@import url("../../styles/style.css");
+
+.container__nav {
+  width: 100%;
+  justify-content: center;
+  background-color: var(--white);
+  color: var(--black-shade);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--grey-border);
+  z-index: 1;
+}
+
+.navigation {
+  font-size: 1.2rem;
+  gap: unset;
+  width: 80%;
+}
+.nav-brand {
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  margin: 0;
+}
+.avatar {
+  width: 2rem;
+  height: 2rem;
+}
+.nav-search {
+  background-color: var(--dark-grey);
+  justify-content: center;
+  margin: 0.8rem 2.8rem;
+  border-radius: 5px;
+}
+.nav-search-input {
+  width: 100%;
+  background-color: inherit;
+}
+
+@media only screen and (max-width: 864px) {
+  .nav-search {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .navigation {
+    width: 100%;
+  }
+}
