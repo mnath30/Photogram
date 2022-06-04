@@ -10,7 +10,7 @@ const Navigation = () => {
           <img className="nav-img" src="../../favicon.ico" alt="logo" />
         </div>
         <NavLink to="/">
-          <h3 className="nav-brand">Socially</h3>
+          <h3 className="nav-brand">Photogram</h3>
         </NavLink>
         <div className="nav-search">
           <input

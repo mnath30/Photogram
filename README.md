@@ -1,3 +1,3 @@
-Socially
+Photogram
 
-A social media application to connect with people. Share, follow and connect with all your friends on socially.
+A social media application to connect with people. Share your photos,like and comment on photos, follow and connect with friends only on photogram.
