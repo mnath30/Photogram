@@ -1,4 +1,4 @@
-import { Posts, SideSection } from "../../Components";
+import { PostCards, SideSection } from "../../Components";
 import "./home.css";
 import { data } from "../../helper/data";
 
@@ -8,7 +8,7 @@ const Home = () => {
       <div className="flex">
         <div className="home__container-main">
           {data.map((post, id) => (
-            <Posts item={post} key={id} />
+            <PostCards item={post} key={id} />
           ))}
         </div>
         <div className="home__container-side">

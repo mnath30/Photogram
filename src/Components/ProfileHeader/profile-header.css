@@ -1,0 +1,72 @@
+.profileheader__container {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "profileimage username"
+    "profileimage description";
+
+  width: 60%;
+  margin: auto;
+}
+
+.profileheader__icon {
+  grid-area: profileimage;
+  width: 8rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0.4rem;
+  justify-self: center;
+  align-self: center;
+}
+.profileheader__image {
+  width: 100%;
+}
+.profileheader__username {
+  grid-area: username;
+}
+.profile_name {
+  margin-bottom: 0.4rem;
+}
+.profileheader__description {
+  grid-area: description;
+}
+.profileheader-btn {
+  border: 1px solid var(--grey-border);
+  cursor: pointer;
+  font-size: 1rem;
+}
+.txt-left {
+  padding: 0 1.2rem;
+}
+.profileheader__bottom {
+  border-top: 1px solid var(--grey-border);
+  justify-content: center;
+}
+
+.nav-btn {
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.nav-active {
+  background-color: var(--grey-border);
+}
+
+@media only screen and (max-width: 1074px) {
+  .profileheader__container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 734px) {
+  .profileheader__container {
+    grid-template-areas:
+      "profileimage username"
+      "description description";
+    grid-template-columns: 1fr 2fr;
+  }
+  .profileheader__icon {
+    justify-self: left;
+    width: 5rem;
+  }
+}

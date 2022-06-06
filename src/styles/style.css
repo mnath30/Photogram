@@ -11,6 +11,9 @@
 .padding-sm {
   padding: 0.4rem;
 }
+.padding-md {
+  padding: 0.8rem;
+}
 
 .hr {
   border-bottom: 1px solid var(--grey-border);

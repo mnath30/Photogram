@@ -1,0 +1,31 @@
+.post__container {
+  max-width: 28rem;
+  margin: 0.8rem;
+  border: 1px solid var(--grey-border);
+  background-color: var(--white);
+  border-radius: 5px;
+}
+.responsive-img {
+  padding: 0.4rem 0;
+  border-radius: 0;
+}
+
+.post__container-header {
+  align-items: center;
+}
+.post__container-description {
+  text-align: left;
+  padding: 0.4rem;
+}
+.post__container-btn {
+  color: var(--primary-color);
+  background-color: inherit;
+  margin-left: auto;
+  padding-right: 0.8rem;
+}
+
+@media only screen and (max-width: 470px) {
+  .post__container {
+    margin: 0.8rem 0;
+  }
+}
