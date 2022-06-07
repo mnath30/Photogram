@@ -38,8 +38,9 @@ const Navigation = () => {
               <li className="nav-li">
                 <i className="fa-regular fa-heart fa-lg"></i>
               </li>
-
-              <img src={avatar} alt="john doe" className="avatar xs" />
+              <NavLink to="/profile/posts">
+                <img src={avatar} alt="john doe" className="avatar xs" />
+              </NavLink>
             </ul>
           </div>
         </div>
