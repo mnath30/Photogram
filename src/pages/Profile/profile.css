@@ -1,0 +1,10 @@
+.profile__container {
+  margin: auto;
+}
+
+@media only screen and (max-width: 470px) {
+  .profile__container {
+    margin: 0;
+    width: 100%;
+  }
+}
