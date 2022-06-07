@@ -4,9 +4,9 @@ const ExplorePost = ({ post }) => {
   const { info, image } = post;
   return (
     <>
-      <div className="singlepost__container">
-        <img src={image} alt={info} className="singlepost__img" />
-        <div className="singlepost__overlay flex">
+      <div className="explorepost__container">
+        <img src={image} alt={info} className="explorepost__img" />
+        <div className="explorepost__overlay flex">
           <i className="fa-solid fa-heart fa-lg padding-sm">
             <span className=" padding-sm">23</span>
           </i>

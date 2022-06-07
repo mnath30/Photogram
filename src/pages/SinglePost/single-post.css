@@ -4,9 +4,6 @@
   border: 1px solid var(--grey-border);
   border-radius: 2px;
   background-color: var(--white);
-}
-
-.grid {
   grid-template-areas: "postimage postdetails";
   grid-template-columns: repeat(2, 1fr);
 }
@@ -52,8 +49,6 @@
   .singlepost__container {
     margin: 0 auto;
     width: 100%;
-  }
-  .grid {
     grid-template-areas: "postimage postdetails";
     grid-template-columns: 1fr;
     grid-template-areas: "postimage" "postdetails";
