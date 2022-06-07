@@ -12,6 +12,7 @@ const Router = () => {
         <Route path="saved" element={<BookmarkedPost />} />
       </Route>
       {/* <Route path="*" element={<PageNotFound />} /> */}
+      <Route path="/singlepost" element={<SinglePost />} />
     </Routes>
   );
 };
