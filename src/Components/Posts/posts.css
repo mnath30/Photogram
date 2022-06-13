@@ -1,14 +1,14 @@
-.singlepost__container {
+.post__container {
   position: relative;
   cursor: pointer;
 }
 
-.singlepost__img {
+.post__img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
-.singlepost__overlay {
+.post__overlay {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -22,6 +22,6 @@
   font-size: 0.8rem;
 }
 
-.singlepost__container:hover .singlepost__img + .singlepost__overlay {
+.post__container:hover .post__img + .post__overlay {
   visibility: visible;
 }
