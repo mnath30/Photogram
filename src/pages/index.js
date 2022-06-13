@@ -3,3 +3,4 @@ export { Explore } from "./UserPosts/Explore";
 export { Profile } from "./Profile/Profile";
 export { UserPost } from "./UserPosts/UserPost";
 export { BookmarkedPost } from "./UserPosts/BookmarkedPost";
+export { SinglePost } from "./SinglePost/SinglePost";

@@ -1,5 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Explore, Profile, UserPost, BookmarkedPost } from "../pages";
+import {
+  Home,
+  Explore,
+  Profile,
+  UserPost,
+  BookmarkedPost,
+  SinglePost,
+} from "../pages";
 
 const Router = () => {
   return (
@@ -12,6 +19,7 @@ const Router = () => {
         <Route path="saved" element={<BookmarkedPost />} />
       </Route>
       {/* <Route path="*" element={<PageNotFound />} /> */}
+      <Route path="/singlepost" element={<SinglePost />} />
     </Routes>
   );
 };

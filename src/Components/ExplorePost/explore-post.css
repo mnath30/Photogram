@@ -1,14 +1,14 @@
-.post__container {
+.explorepost__container {
   position: relative;
   cursor: pointer;
 }
 
-.post__img {
+.explorepost__img {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
-.post__overlay {
+.explorepost__overlay {
   visibility: hidden;
   position: absolute;
   top: 0;
@@ -22,6 +22,6 @@
   font-size: 0.8rem;
 }
 
-.post__container:hover .post__img + .post__overlay {
+.explorepost__container:hover .explorepost__img + .explorepost__overlay {
   visibility: visible;
 }

@@ -1,12 +1,12 @@
-import "./posts.css";
+import "./explore-post.css";
 
-const Posts = ({ post }) => {
+const ExplorePost = ({ post }) => {
   const { info, image } = post;
   return (
     <>
-      <div className="post__container">
-        <img src={image} alt={info} className="post__img" />
-        <div className="post__overlay flex">
+      <div className="explorepost__container">
+        <img src={image} alt={info} className="explorepost__img" />
+        <div className="explorepost__overlay flex">
           <i className="fa-solid fa-heart fa-lg padding-sm">
             <span className=" padding-sm">23</span>
           </i>
@@ -19,4 +19,4 @@ const Posts = ({ post }) => {
   );
 };
 
-export { Posts };
+export { ExplorePost };
