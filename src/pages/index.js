@@ -4,3 +4,6 @@ export { Profile } from "./Profile/Profile";
 export { UserPost } from "./UserPosts/UserPost";
 export { BookmarkedPost } from "./UserPosts/BookmarkedPost";
 export { SinglePost } from "./SinglePost/SinglePost";
+export { Login } from "./Authentication/Login";
+export { Logout } from "./Authentication/Logout";
+export { Signup } from "./Authentication/Signup";

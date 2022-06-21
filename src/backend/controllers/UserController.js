@@ -49,9 +49,7 @@ export const editUserHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -83,9 +81,7 @@ export const getBookmarkPostsHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -115,9 +111,7 @@ export const bookmarkPostHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -162,9 +156,7 @@ export const removePostFromBookmarkHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -209,9 +201,7 @@ export const followUserHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -270,9 +260,7 @@ export const unfollowUserHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }

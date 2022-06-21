@@ -6,3 +6,5 @@ export { ExplorePost } from "./ExplorePost/ExplorePost";
 export { Posts } from "./Posts/Posts";
 export { ProfileHeader } from "./ProfileHeader/ProfileHeader";
 export { Comment } from "./Comment/Comment";
+export { Loader } from "./Loader/Loader";
+export { ProfileDropdown } from "./ProfileDropdown/ProfileDropdown";
