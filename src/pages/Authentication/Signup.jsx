@@ -12,6 +12,7 @@ const Signup = () => {
     username: "",
     password: "",
   });
+  const [emailError, setEmailError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { encodedToken, loading, errormessage, userAccountName } = useSelector(
     (store) => store.auth
@@ -30,14 +31,18 @@ const Signup = () => {
     e.preventDefault();
     const { email, fullname, username, password } = userDetail;
     if (email && fullname && password && username) {
-      dispatch(
-        userSignup({
-          fullname,
-          email,
-          username,
-          password,
-        })
-      );
+      if (email.match(/\S+@\S+\.\S+/)) {
+        dispatch(
+          userSignup({
+            fullname,
+            email,
+            username,
+            password,
+          })
+        );
+      } else {
+        setEmailError("Enter valid email");
+      }
     }
   };
 
@@ -52,16 +57,19 @@ const Signup = () => {
               Email
             </label>
             <input
+              required
               type="email"
               id="email"
               placeholder="Email"
               className="auth__container-input"
               value={userDetail.email}
-              onChange={(e) =>
-                setUserDetail({ ...userDetail, email: e.target.value })
-              }
-              required
+              onChange={(e) => {
+                setEmailError("");
+                setUserDetail({ ...userDetail, email: e.target.value });
+              }}
             />
+
+            {emailError && <p className="error-msg">{emailError}</p>}
             <label htmlFor="userfullname" className="auth__container-label">
               Name
             </label>
@@ -106,15 +114,19 @@ const Signup = () => {
                 required
               />
               {showPassword ? (
-                <i
-                  className="fa-solid fa-eye"
+                <span
+                  className="auth__password-visibility"
                   onClick={() => setShowPassword(false)}
-                ></i>
+                >
+                  <i className="fa-solid fa-eye"></i>
+                </span>
               ) : (
-                <i
-                  className="fa-solid fa-eye-slash"
+                <span
+                  className="auth__password-visibility"
                   onClick={() => setShowPassword(true)}
-                ></i>
+                >
+                  <i className="fa-solid fa-eye-slash"></i>
+                </span>
               )}
             </div>
             <button

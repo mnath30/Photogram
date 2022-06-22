@@ -80,3 +80,7 @@
 .error-msg {
   color: var(--secondary-color);
 }
+
+.auth__password-visibility {
+  cursor: pointer;
+}

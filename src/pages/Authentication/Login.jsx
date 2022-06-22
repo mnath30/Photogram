@@ -68,15 +68,19 @@ const Login = () => {
                 required
               />
               {showPassword ? (
-                <i
-                  className="fa-solid fa-eye"
+                <span
+                  className="auth__password-visibility"
                   onClick={() => setShowPassword(false)}
-                ></i>
+                >
+                  <i className="fa-solid fa-eye"></i>
+                </span>
               ) : (
-                <i
-                  className="fa-solid fa-eye-slash"
+                <span
+                  className="auth__password-visibility"
                   onClick={() => setShowPassword(true)}
-                ></i>
+                >
+                  <i className="fa-solid fa-eye-slash"></i>
+                </span>
               )}
             </div>
             <button
