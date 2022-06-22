@@ -1,8 +1,14 @@
 import { avatar } from "../../asset";
 import "./navigation.css";
 import { NavLink } from "react-router-dom";
+import { useOnClickOutside } from "../../hooks";
+import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [displayDropdown, setDisplayDropdown] = useState(false);
+  const domNode = useOnClickOutside(() => setDisplayDropdown(false));
+
   return (
     <div className="flex container__nav">
       <nav className="navigation">
@@ -38,9 +44,17 @@ const Navigation = () => {
               <li className="nav-li">
                 <i className="fa-regular fa-heart fa-lg"></i>
               </li>
-              <NavLink to="/profile/posts">
+
+              <li
+                onClick={() => setDisplayDropdown((prev) => !prev)}
+                className="nav-li-profile"
+                ref={domNode}
+              >
                 <img src={avatar} alt="john doe" className="avatar xs" />
-              </NavLink>
+                {displayDropdown && (
+                  <ProfileDropdown className="navigation__dropdown" />
+                )}
+              </li>
             </ul>
           </div>
         </div>

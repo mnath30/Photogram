@@ -17,13 +17,22 @@
   width: 80%;
 }
 .nav-brand {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   padding: 0.2rem;
   margin: 0;
+  font-family: "Courgette", cursive;
 }
+.nav-brand-logo {
+  margin: 0;
+}
+
 .avatar {
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
+}
+.nav-li-profile {
+  position: relative;
 }
 .nav-search {
   background-color: var(--dark-grey);
@@ -34,6 +43,10 @@
 .nav-search-input {
   width: 100%;
   background-color: inherit;
+}
+.navigation__dropdown {
+  position: absolute;
+  right: 0.2rem;
 }
 
 @media only screen and (max-width: 864px) {

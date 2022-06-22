@@ -6,20 +6,78 @@ import {
   UserPost,
   BookmarkedPost,
   SinglePost,
+  Login,
+  Signup,
+  Logout,
 } from "../pages";
+import { RequiresAuth } from "../helper";
+import Mockman from "mockman-js";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="explore" element={<Explore />} />
+      <Route
+        path="/"
+        element={
+          <RequiresAuth>
+            <Home />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="explore"
+        element={
+          <RequiresAuth>
+            <Explore />
+          </RequiresAuth>
+        }
+      />
       {/* <Route path="liked" element={<Like />} /> */}
-      <Route path="profile" element={<Profile />}>
-        <Route path="posts" element={<UserPost />} />
-        <Route path="saved" element={<BookmarkedPost />} />
+      <Route
+        path="profile"
+        element={
+          <RequiresAuth>
+            <Profile />
+          </RequiresAuth>
+        }
+      >
+        <Route
+          path="/profile/posts"
+          element={
+            <RequiresAuth>
+              <UserPost />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/profile/saved"
+          element={
+            <RequiresAuth>
+              <BookmarkedPost />
+            </RequiresAuth>
+          }
+        />
       </Route>
       {/* <Route path="*" element={<PageNotFound />} /> */}
-      <Route path="/singlepost" element={<SinglePost />} />
+      <Route
+        path="/singlepost"
+        element={
+          <RequiresAuth>
+            <SinglePost />
+          </RequiresAuth>
+        }
+      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route
+        path="/logout"
+        element={
+          <RequiresAuth>
+            <Logout />
+          </RequiresAuth>
+        }
+      />
+      <Route path="/mockman" element={<Mockman />} />
     </Routes>
   );
 };
