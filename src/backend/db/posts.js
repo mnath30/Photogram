@@ -18,7 +18,7 @@ export const posts = [
       likeCount: 2,
       likedBy: ["John Doe", "Jane Doe"],
     },
-    username: "Maitreyee Nath",
+    username: "maitreyee",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),
