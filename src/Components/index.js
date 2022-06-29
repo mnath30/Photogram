@@ -8,3 +8,4 @@ export { ProfileHeader } from "./ProfileHeader/ProfileHeader";
 export { Comment } from "./Comment/Comment";
 export { Loader } from "./Loader/Loader";
 export { ProfileDropdown } from "./ProfileDropdown/ProfileDropdown";
+export { EmptyFeed } from "./EmptyFeed/EmptyFeed";

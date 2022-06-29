@@ -9,6 +9,7 @@ import {
   Login,
   Signup,
   Logout,
+  PageNotFound,
 } from "../pages";
 import { RequiresAuth } from "../helper";
 import Mockman from "mockman-js";
@@ -42,7 +43,7 @@ const Router = () => {
         }
       >
         <Route
-          path="/profile/posts"
+          path="posts"
           element={
             <RequiresAuth>
               <UserPost />
@@ -50,7 +51,7 @@ const Router = () => {
           }
         />
         <Route
-          path="/profile/saved"
+          path="saved"
           element={
             <RequiresAuth>
               <BookmarkedPost />
@@ -78,6 +79,7 @@ const Router = () => {
         }
       />
       <Route path="/mockman" element={<Mockman />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };
