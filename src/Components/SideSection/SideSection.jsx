@@ -1,41 +1,29 @@
 import { UserDetails } from "../UserDetails/UserDetails";
-import { avatar } from "../../asset";
+import "./side-section.css";
 
-const SideSection = () => {
+const SideSection = ({ currentUserName, userList }) => {
   return (
-    <div className="flex-col">
+    <div className="flex-col padding-sm">
       <UserDetails
         size="avatar-xxl"
-        source={avatar}
-        username="Maitreyee nath"
+        source={currentUserName?.profilePicture}
+        username={currentUserName?.username}
         btntext="View Profile"
       />
-      <p>Suggestions For You </p>
-      <UserDetails
-        size="avatar-lg"
-        source={avatar}
-        username="Pikachu"
-        btntext="Follow"
-      />
-      <UserDetails
-        size="avatar-lg"
-        source={avatar}
-        username="Ash"
-        btntext="Follow"
-      />
-      <UserDetails size="lg" source={avatar} username="Rock" btntext="Follow" />
-      <UserDetails
-        size="lg"
-        source={avatar}
-        username="John Doe"
-        btntext="Follow"
-      />
-      <UserDetails
-        size="avatar-lg"
-        source={avatar}
-        username="Jane Doe"
-        btntext="Follow"
-      />
+      <p className="suggested-section">Suggestions For You </p>
+      {userList.length === 0 && (
+        <p className="suggested-section">No Suggestions Available </p>
+      )}
+      {userList.length !== 0 &&
+        userList.map((user) => (
+          <UserDetails
+            size="avatar-lg"
+            source={user.profilePicture}
+            username={user.username}
+            btntext="Follow"
+            key={user._id}
+          />
+        ))}
     </div>
   );
 };

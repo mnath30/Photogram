@@ -7,3 +7,4 @@ export { SinglePost } from "./SinglePost/SinglePost";
 export { Login } from "./Authentication/Login";
 export { Logout } from "./Authentication/Logout";
 export { Signup } from "./Authentication/Signup";
+export { PageNotFound } from "./PageNotFound/PageNotFound";
