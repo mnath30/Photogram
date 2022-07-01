@@ -17,11 +17,31 @@
   text-align: left;
   padding: 0.4rem;
 }
+
+.postcard_text {
+  color: var(--black-shade);
+  font-size: 0.8rem;
+  padding: 0.2rem;
+}
+
+.postcard_items {
+  align-items: center;
+}
+
 .postcard__container-btn {
   color: var(--primary-color);
   background-color: inherit;
   margin-left: auto;
   padding-right: 0.8rem;
+}
+
+.postcard__like {
+  align-items: center;
+  display: flex;
+}
+
+.liked {
+  color: var(--secondary-color);
 }
 
 @media only screen and (max-width: 470px) {

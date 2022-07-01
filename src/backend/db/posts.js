@@ -16,7 +16,7 @@ export const posts = [
     info: "shoe",
     likes: {
       likeCount: 2,
-      likedBy: ["John Doe", "Jane Doe"],
+      likedBy: ["john", "janedoe"],
     },
     username: "maitreyee",
     profile: avatar,
@@ -25,12 +25,12 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "John Doe",
+        username: "john",
         text: "See you tomorrow",
       },
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Great shoes",
       },
     ],
@@ -43,9 +43,9 @@ export const posts = [
     info: "food",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Triperia"],
+      likedBy: ["maitreyee", "john", "Triperia"],
     },
-    username: "Jane Doe",
+    username: "janedoe",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -57,7 +57,7 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Wow!",
       },
     ],
@@ -72,7 +72,7 @@ export const posts = [
       likeCount: 1,
       likedBy: ["maitreyee"],
     },
-    username: "Jane Doe",
+    username: "janedoe",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -92,7 +92,7 @@ export const posts = [
     info: "mountains",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Wildlife"],
+      likedBy: ["maitreyee", "john", "Wildlife"],
     },
     username: "Triperia",
     profile: avatar,
@@ -106,7 +106,7 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Wow!",
       },
     ],
@@ -119,7 +119,7 @@ export const posts = [
     info: "reindeer",
     likes: {
       likeCount: 1,
-      likedBy: ["John Doe"],
+      likedBy: ["john"],
     },
     username: "Wildlife",
     profile: avatar,
@@ -128,7 +128,7 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "John Doe",
+        username: "john",
         text: "Wow!",
       },
     ],
@@ -141,9 +141,9 @@ export const posts = [
     info: "bag",
     likes: {
       likeCount: 1,
-      likedBy: ["Jane Doe"],
+      likedBy: ["janedoe"],
     },
-    username: "John Doe",
+    username: "john",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -155,7 +155,7 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: ":(",
       },
     ],
@@ -168,7 +168,7 @@ export const posts = [
     info: "dogs",
     likes: {
       likeCount: 2,
-      likedBy: ["maitreyee", "John Doe"],
+      likedBy: ["maitreyee", "john"],
     },
     username: "Wildlife",
     profile: avatar,
@@ -182,7 +182,7 @@ export const posts = [
       },
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "So cute",
       },
     ],
@@ -195,7 +195,7 @@ export const posts = [
     info: "pie",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Jane Doe"],
+      likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "maitreyee",
     profile: avatar,
@@ -204,7 +204,7 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Looks delicious",
       },
     ],
@@ -217,7 +217,7 @@ export const posts = [
     info: "nature-mountains",
     likes: {
       likeCount: 1,
-      likedBy: ["Jane Doe"],
+      likedBy: ["janedoe"],
     },
     username: "Triperia",
     profile: avatar,
@@ -226,7 +226,7 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "So peacefull",
       },
     ],
@@ -239,7 +239,7 @@ export const posts = [
     info: "nature-mountains",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Jane Doe"],
+      likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "The Sports' enthusiast",
     profile: avatar,
@@ -261,7 +261,7 @@ export const posts = [
     info: "boat",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Jane Doe"],
+      likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "Triperia",
     profile: avatar,
@@ -270,7 +270,7 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Comming 🏃‍♀️",
       },
     ],
@@ -283,7 +283,7 @@ export const posts = [
     info: "girl",
     likes: {
       likeCount: 2,
-      likedBy: ["John Doe", "Jane Doe"],
+      likedBy: ["john", "janedoe"],
     },
     username: "Urban",
     profile: avatar,
@@ -292,7 +292,7 @@ export const posts = [
     comments: [
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Hello",
       },
     ],
@@ -305,16 +305,16 @@ export const posts = [
     info: "man-in-kitchen",
     likes: {
       likeCount: 3,
-      likedBy: ["maitreyee", "John Doe", "Jane Doe"],
+      likedBy: ["maitreyee", "john", "janedoe"],
     },
-    username: "John Doe",
+    username: "john",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
       {
         _id: uuid(),
-        username: "Jane Doe",
+        username: "janedoe",
         text: "Hello chef",
       },
     ],

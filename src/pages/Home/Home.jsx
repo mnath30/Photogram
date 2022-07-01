@@ -54,9 +54,11 @@ const Home = () => {
         <div className="flex">
           <div className="home__container-main">
             {loading && <Loader />}
-            {userFeed.length === 0 && <EmptyFeed />}
+            {!loading && userFeed.length === 0 && <EmptyFeed />}
             {userFeed.length !== 0 &&
-              userFeed.map((post) => <PostCards item={post} key={post._id} />)}
+              userFeed.map((post) => (
+                <PostCards item={post} key={post._id} dispatchfunc={dispatch} />
+              ))}
           </div>
           <div className="home__container-side">
             <SideSection

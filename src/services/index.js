@@ -3,13 +3,13 @@ export { signupService } from "./authServices";
 export {
   loadPostService,
   likePostService,
-  dislikePostService,
+  unlikePostService,
 } from "./postServices";
 export {
   loadUsersService,
   followUserService,
   unfollowUserService,
-  getUserBookmarksService,
-  addBookmarkService,
-  removeBookmarkService,
-} from "./userServices";
+} from // getUserBookmarksService,
+// addBookmarkService,
+// removeBookmarkService,
+"./userServices";
