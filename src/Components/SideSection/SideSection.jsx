@@ -1,7 +1,7 @@
 import { UserDetails } from "../UserDetails/UserDetails";
 import "./side-section.css";
 
-const SideSection = ({ currentUserName, userList }) => {
+const SideSection = ({ currentUserName, userList, clickHandler }) => {
   return (
     <div className="flex-col padding-sm">
       <UserDetails
@@ -22,6 +22,7 @@ const SideSection = ({ currentUserName, userList }) => {
             username={user.username}
             btntext="Follow"
             key={user._id}
+            handleClick={() => clickHandler(user._id)}
           />
         ))}
     </div>

@@ -24,7 +24,7 @@ export const users = [
   {
     _id: uuid(),
     fullname: "John Doe",
-    username: "John Doe",
+    username: "john",
     password: "jdoe123",
     email: "johndoe@gmail.com",
     createdAt: formatDate(),
@@ -38,7 +38,7 @@ export const users = [
   {
     _id: uuid(),
     fullname: "Jane Doe",
-    username: "Jane Doe",
+    username: "janedoe",
     password: "janeDoe123",
     email: "janedoe@gmail.com",
     createdAt: formatDate(),
@@ -51,8 +51,8 @@ export const users = [
   },
   {
     _id: uuid(),
-    fullname: "The Sports' enthusiast",
-    username: "The Sports' enthusiast",
+    fullname: "World Sports",
+    username: "The_Sports'_enthusiast",
     password: "sportsenthu123",
     email: "sportsenthu@gmail.com",
     createdAt: formatDate(),
@@ -80,7 +80,7 @@ export const users = [
   },
   {
     _id: uuid(),
-    fullname: "Wildlife",
+    fullname: "Wildlife Explorer",
     username: "Wildlife",
     password: "wildlife123",
     email: "wildlife@gmail.com",
@@ -94,7 +94,7 @@ export const users = [
   },
   {
     _id: uuid(),
-    fullname: "Urban",
+    fullname: "Urban Life",
     username: "Urban",
     password: "urban123",
     email: "urban@gmail.com",

@@ -1,0 +1,68 @@
+.subtab__container {
+  margin: 2rem auto 0 auto;
+}
+
+.subtab__header {
+  margin: auto;
+  width: 50%;
+}
+
+.subtab__contents {
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 2px solid var(--grey-border);
+  font-size: 1.2rem;
+}
+
+.subtab__contents-item {
+  width: 50%;
+}
+
+.subtab_active {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.related-user__container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.related-user__details {
+  background-color: var(--white);
+  margin: 0.2rem auto;
+}
+
+.related-user__msg {
+  text-align: left;
+  padding: 1.8rem 0.8rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .subtab__container {
+    margin: 0.8rem auto 0 auto;
+  }
+
+  .subtab__header {
+    margin: auto;
+    width: 100%;
+  }
+
+  .related-user__container {
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--white);
+    min-height: 100vh;
+  }
+  .related-user__header {
+    padding: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .suggested-user__container {
+    margin: auto;
+    padding: 0.2rem;
+    width: 100%;
+  }
+}

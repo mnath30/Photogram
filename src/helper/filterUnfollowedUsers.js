@@ -1,7 +1,8 @@
 const filterUnfollowedUsers = (currentUser, following, allUsers) => {
   const filteredUsers = allUsers.filter(
     (user) =>
-      !following.includes(user.username) && user.username !== currentUser
+      !following.find((item) => item.username === user.username) &&
+      user.username !== currentUser
   );
   return filteredUsers;
 };

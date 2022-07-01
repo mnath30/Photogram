@@ -3,6 +3,7 @@ import { avatar } from "../../asset";
 import { NavLink } from "react-router-dom";
 
 const ProfileHeader = () => {
+  const username = localStorage.getItem("username");
   return (
     <>
       <div className="grid profileheader__container padding-md">
@@ -23,22 +24,28 @@ const ProfileHeader = () => {
       </div>
 
       <div className="flex profileheader__bottom">
-        <div className="padding-md">
-          <div>16</div>
-          <div>Posts</div>
-        </div>
-        <div className="padding-md">
-          <div>12</div>
-          <div>Followers</div>
-        </div>
-        <div className="padding-md">
-          <div>10</div>
-          <div>Following</div>
-        </div>
+        <NavLink to={`/profile/${username}/`}>
+          <div className="padding-md">
+            <div>16</div>
+            <div>Posts</div>
+          </div>
+        </NavLink>
+        <NavLink to={`/profile/${username}/followers`}>
+          <div className="padding-md">
+            <div>12</div>
+            <div>Followers</div>
+          </div>
+        </NavLink>
+        <NavLink to={`/profile/${username}/following`}>
+          <div className="padding-md">
+            <div>10</div>
+            <div>Following</div>
+          </div>
+        </NavLink>
       </div>
       <div className="flex  profileheader__bottom">
         <NavLink
-          to="/profile/posts"
+          to={`/profile/${username}/`}
           className={({ isActive }) => (isActive ? `nav-active` : ``)}
         >
           <div className="nav-btn">
@@ -48,7 +55,7 @@ const ProfileHeader = () => {
           </div>
         </NavLink>
         <NavLink
-          to="/profile/saved"
+          to={`/profile/${username}/saved`}
           className={({ isActive }) => (isActive ? `nav-active` : ``)}
         >
           <div className="nav-btn">

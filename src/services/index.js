@@ -1,4 +1,15 @@
 export { loginService } from "./authServices";
 export { signupService } from "./authServices";
-export { loadPostService } from "./postServices";
-export { loadUsersService } from "./userServices";
+export {
+  loadPostService,
+  likePostService,
+  dislikePostService,
+} from "./postServices";
+export {
+  loadUsersService,
+  followUserService,
+  unfollowUserService,
+  getUserBookmarksService,
+  addBookmarkService,
+  removeBookmarkService,
+} from "./userServices";

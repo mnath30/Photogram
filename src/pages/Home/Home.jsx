@@ -10,15 +10,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterUnfollowedUsers, filterUserFeed } from "../../helper";
 import { useEffect } from "react";
 import { loadPosts } from "../../features/posts/postSlice";
-import { loadUsers } from "../../features/users/userSlice";
+import { loadUsers, followUser } from "../../features/users/userSlice";
 
 const Home = () => {
   const { posts, loading } = useSelector((store) => store.posts);
   const { allUsers, loggedInUser } = useSelector((store) => store.users);
   const dispatch = useDispatch();
+  const encodedToken = localStorage.getItem("encodedToken");
   let userFeed = [];
   let followUsers = [];
-
   useEffect(() => {
     if (!posts) {
       dispatch(loadPosts());
@@ -43,6 +43,10 @@ const Home = () => {
     );
   }
 
+  const followHandler = (userId) => {
+    dispatch(followUser({ userId, encodedToken }));
+  };
+
   return (
     <>
       <Navigation />
@@ -58,6 +62,7 @@ const Home = () => {
             <SideSection
               currentUserName={loggedInUser}
               userList={followUsers.slice(0, 5)}
+              clickHandler={followHandler}
             />
           </div>
         </div>

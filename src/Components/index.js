@@ -1,6 +1,7 @@
 export { Navigation } from "./Navigation/Navigation";
 export { PostCards } from "./PostCards/PostCards";
 export { UserDetails } from "./UserDetails/UserDetails";
+export { HorizontalUserDetails } from "./UserDetails/HorizontalUserDetails";
 export { SideSection } from "./SideSection/SideSection";
 export { ExplorePost } from "./ExplorePost/ExplorePost";
 export { Posts } from "./Posts/Posts";

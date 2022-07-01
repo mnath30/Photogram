@@ -6,6 +6,13 @@
   border: 1px solid var(--grey-border);
   width: 18rem;
 }
+
+.userdetails__horiz-container {
+  background-color: var(--white);
+  border-radius: 5px;
+  margin: auto;
+}
+
 .userprofile__container-btn {
   font-size: 1rem;
   margin-left: auto;
@@ -15,4 +22,17 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.userdetails__section {
+  align-items: flex-start;
+  padding: 0 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userdetails__name {
+  color: var(--secondary-text-color);
+  font-size: 0.8rem;
 }
