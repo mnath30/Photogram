@@ -1,6 +1,8 @@
 const filterUserFeed = (currentUser, following, allPosts) => {
   const filteredPosts = allPosts.filter(
-    (post) => following.includes(post.username) || post.username === currentUser
+    (post) =>
+      following.find((item) => item.username === post.username) ||
+      post.username === currentUser
   );
   return filteredPosts;
 };

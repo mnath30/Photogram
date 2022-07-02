@@ -1,0 +1,41 @@
+.suggested-user__header {
+  margin: 0.2rem auto;
+  text-align: left;
+}
+
+.suggested-user__container {
+  margin: 2rem auto;
+  padding: 0.8rem;
+  width: 50%;
+}
+
+.suggested-user__details {
+  background-color: var(--white);
+  margin: 0.2rem auto;
+}
+
+.suggested-user__msg {
+  text-align: left;
+  padding: 1.8rem 0.8rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .suggested-user__container {
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--white);
+    min-height: 100vh;
+  }
+  .suggested-user__header {
+    padding: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .suggested-user__container {
+    margin: auto;
+    padding: 0.2rem;
+    width: 100%;
+  }
+}

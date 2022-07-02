@@ -10,6 +10,10 @@ import {
   Signup,
   Logout,
   PageNotFound,
+  Suggestion,
+  RelatedUsers,
+  Followers,
+  Following,
 } from "../pages";
 import { RequiresAuth } from "../helper";
 import Mockman from "mockman-js";
@@ -33,9 +37,16 @@ const Router = () => {
           </RequiresAuth>
         }
       />
-      {/* <Route path="liked" element={<Like />} /> */}
       <Route
-        path="profile"
+        path="explore/people"
+        element={
+          <RequiresAuth>
+            <Suggestion />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="profile/:username"
         element={
           <RequiresAuth>
             <Profile />
@@ -43,7 +54,7 @@ const Router = () => {
         }
       >
         <Route
-          path="posts"
+          index
           element={
             <RequiresAuth>
               <UserPost />
@@ -59,26 +70,50 @@ const Router = () => {
           }
         />
       </Route>
-      {/* <Route path="*" element={<PageNotFound />} /> */}
       <Route
-        path="/singlepost"
+        path="profile/:username"
+        element={
+          <RequiresAuth>
+            <RelatedUsers />
+          </RequiresAuth>
+        }
+      >
+        <Route
+          path="followers"
+          element={
+            <RequiresAuth>
+              <Followers />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="following"
+          element={
+            <RequiresAuth>
+              <Following />
+            </RequiresAuth>
+          }
+        />
+      </Route>
+      <Route
+        path="singlepost"
         element={
           <RequiresAuth>
             <SinglePost />
           </RequiresAuth>
         }
       />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="login" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
       <Route
-        path="/logout"
+        path="logout"
         element={
           <RequiresAuth>
             <Logout />
           </RequiresAuth>
         }
       />
-      <Route path="/mockman" element={<Mockman />} />
+      <Route path="mockman" element={<Mockman />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -28,3 +28,27 @@ a {
   text-decoration: none;
   color: var(--black-shade);
 }
+
+.page__link {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.primary_btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.secondary_btn {
+  background-color: inherit;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: auto;
+}

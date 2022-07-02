@@ -41,10 +41,11 @@ const Navigation = () => {
                   <i className="fa-solid fa-compass fa-lg"></i>
                 </li>
               </NavLink>
-              <li className="nav-li">
-                <i className="fa-regular fa-heart fa-lg"></i>
-              </li>
-
+              <NavLink to="/explore/people">
+                <li className="nav-li">
+                  <i className="fa-regular fa-heart fa-lg"></i>
+                </li>
+              </NavLink>
               <li
                 onClick={() => setDisplayDropdown((prev) => !prev)}
                 className="nav-li-profile"

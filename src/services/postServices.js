@@ -1,5 +1,31 @@
 import axios from "axios";
 
+//Load all posts
 const loadPostService = async () => await axios.get("/api/posts");
 
-export { loadPostService };
+// Like and Unlike posts
+const likePostService = async (postId, token) => {
+  return await axios.post(
+    `/api/posts/like/${postId}`,
+    {},
+    {
+      headers: {
+        authorization: token,
+      },
+    }
+  );
+};
+
+const unlikePostService = async (postId, token) => {
+  return await axios.post(
+    `/api/posts/dislike/${postId}`,
+    {},
+    {
+      headers: {
+        authorization: token,
+      },
+    }
+  );
+};
+
+export { loadPostService, likePostService, unlikePostService };
