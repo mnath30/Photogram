@@ -28,4 +28,36 @@ const unlikePostService = async (postId, token) => {
   );
 };
 
-export { loadPostService, likePostService, unlikePostService };
+const uploadPostService = async (postData, token) => {
+  return await axios.post(
+    "/api/posts",
+    { postData },
+    { headers: { authorization: token } }
+  );
+};
+
+const deletePostService = async (postID, token) => {
+  return await axios.delete(`/api/posts/${postID}`, {
+    headers: { authorization: token },
+  });
+};
+
+const updatePostService = async (postData, token) => {
+  const { _id: postId, description, image } = postData;
+  return await axios.post(
+    `/api/posts/edit/${postId}`,
+    {
+      postData: { description, image },
+    },
+    { headers: { authorization: token } }
+  );
+};
+
+export {
+  loadPostService,
+  likePostService,
+  unlikePostService,
+  uploadPostService,
+  deletePostService,
+  updatePostService,
+};

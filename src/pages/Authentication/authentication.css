@@ -77,10 +77,6 @@
   opacity: 0.5;
 }
 
-.error-msg {
-  color: var(--secondary-color);
-}
-
 .auth__password-visibility {
   cursor: pointer;
 }

@@ -4,18 +4,43 @@
   border: 1px solid var(--grey-border);
   background-color: var(--white);
   border-radius: 5px;
+  position: relative;
 }
+
+.postcard__dropdown {
+  position: absolute;
+  top: 6%;
+  right: 2%;
+}
+
 .responsive-img {
-  padding: 0.4rem 0;
+  padding: 0;
   border-radius: 0;
+  max-height: 20rem;
 }
 
 .postcard__container-header {
   align-items: center;
+  border-bottom: 1px solid var(--grey-border);
+  display: flex;
 }
+
+.postcard__dropdown_container {
+  margin-left: auto;
+  width: fit-content;
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.postcard__dropdown_button {
+  background-color: inherit;
+  cursor: pointer;
+}
+
 .postcard__container-description {
   text-align: left;
   padding: 0.4rem;
+  overflow-wrap: break-word;
 }
 
 .postcard_text {

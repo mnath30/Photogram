@@ -10,3 +10,6 @@ export { Comment } from "./Comment/Comment";
 export { Loader } from "./Loader/Loader";
 export { ProfileDropdown } from "./ProfileDropdown/ProfileDropdown";
 export { EmptyFeed } from "./EmptyFeed/EmptyFeed";
+export { Modal } from "./Modal/Modal";
+export { PostUploadModal } from "./Modal/PostUploadModal";
+export { PostDropdown } from "./ProfileDropdown/PostDropdown";

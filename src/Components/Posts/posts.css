@@ -1,6 +1,7 @@
 .post__container {
   position: relative;
   cursor: pointer;
+  max-height: 14rem;
 }
 
 .post__img {
