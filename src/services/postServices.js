@@ -3,6 +3,11 @@ import axios from "axios";
 //Load all posts
 const loadPostService = async () => await axios.get("/api/posts");
 
+// load single post
+const loadSinglePostService = async (postId) => {
+  return await axios.get(`/api/posts/${postId}`);
+};
+
 // Like and Unlike posts
 const likePostService = async (postId, token) => {
   return await axios.post(
@@ -55,6 +60,7 @@ const updatePostService = async (postData, token) => {
 
 export {
   loadPostService,
+  loadSinglePostService,
   likePostService,
   unlikePostService,
   uploadPostService,

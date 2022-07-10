@@ -241,7 +241,7 @@ export const posts = [
       likeCount: 3,
       likedBy: ["maitreyee", "john", "janedoe"],
     },
-    username: "The Sports' enthusiast",
+    username: "The_Sports'_enthusiast",
     profile: avatar,
     createdAt: formatDate(),
     updatedAt: formatDate(),

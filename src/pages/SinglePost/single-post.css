@@ -10,6 +10,9 @@
 
 .singlepost__container-image {
   grid-area: postimage;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-grey);
 }
 .responsive-img {
   object-fit: cover;
@@ -39,6 +42,11 @@
   outline: none;
 }
 
+.singlepost__addcomment:focus-within {
+  outline: 1px solid var(--grey-border);
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 864px) {
   .singlepost__container {
     width: 90%;
@@ -49,12 +57,18 @@
   .singlepost__container {
     margin: 0 auto;
     width: 100%;
-    grid-template-areas: "postimage postdetails";
     grid-template-columns: 1fr;
     grid-template-areas: "postimage" "postdetails";
   }
   .singlepost__container-comments {
     overflow-y: auto;
     height: auto;
+  }
+  .singlepost__usename {
+    display: none;
+  }
+
+  .singlepost__container_details {
+    order: -1;
   }
 }

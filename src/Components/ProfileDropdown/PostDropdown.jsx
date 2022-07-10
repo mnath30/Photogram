@@ -15,7 +15,7 @@ const PostDropdown = ({
     <div className={className}>
       <ul className="dropdown__container">
         {!currentPost && (
-          <Link to={``}>
+          <Link to={`/post/${postDetail._id}`}>
             <li className="dropdown__items">Go To Post</li>
           </Link>
         )}

@@ -96,7 +96,7 @@ const Router = () => {
         />
       </Route>
       <Route
-        path="singlepost"
+        path="/post/:postId"
         element={
           <RequiresAuth>
             <SinglePost />

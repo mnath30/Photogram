@@ -7,6 +7,7 @@ import {
 } from "../../services";
 import {
   deletePostService,
+  loadSinglePostService,
   updatePostService,
 } from "../../services/postServices";
 
@@ -19,6 +20,19 @@ const loadPosts = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.data);
+    }
+  }
+);
+
+// load single post
+const loadSinglePost = createAsyncThunk(
+  "/posts/loadSinglePost",
+  async (postId, { rejectWithValue }) => {
+    try {
+      const response = await loadSinglePostService(postId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
     }
   }
 );
@@ -89,14 +103,17 @@ const initialState = {
   posts: [],
   loading: false,
   errormessage: "",
+  singlePostLoading: false,
+  singlePostData: {},
+  singlePostError: "",
   likeUnlikeError: "",
-  displayModal: false,
   uploadPostLoading: false,
   uploadPostError: "",
-  editingPost: false,
-  currentPost: {},
   deletePostLoading: false,
   deletePostError: "",
+  displayModal: false,
+  editingPost: false,
+  currentPost: {},
 };
 
 const postSlice = createSlice({
@@ -131,20 +148,34 @@ const postSlice = createSlice({
       state.loading = false;
       state.errormessage = action.payload;
     });
+    // load single post
+    builder.addCase(loadSinglePost.pending, (state) => {
+      state.singlePostLoading = true;
+      state.singlePostError = "";
+    });
+    builder.addCase(loadSinglePost.fulfilled, (state, action) => {
+      state.singlePostLoading = false;
+      state.singlePostError = "";
+      state.singlePostData = action.payload.post;
+    });
+    builder.addCase(loadSinglePost.rejected, (state) => {
+      state.singlePostLoading = false;
+      state.singlePostError = "There was some error in processing your request";
+    });
     // Like and unlike posts
     builder.addCase(likePost.fulfilled, (state, action) => {
       state.likeUnlikeError = "";
-      state.posts = action.payload.posts;
+      state.posts = action.payload.posts.reverse();
     });
     builder.addCase(likePost.rejected, (state, action) => {
-      state.likeUnlikeError = action.payload.errors[0];
+      state.likeUnlikeError = action.payload?.errors[0];
     });
     builder.addCase(unlikePost.fulfilled, (state, action) => {
       state.likeUnlikeError = "";
-      state.posts = action.payload.posts;
+      state.posts = action.payload.posts.reverse();
     });
     builder.addCase(unlikePost.rejected, (state, action) => {
-      state.likeUnlikeError = action.payload.errors[0];
+      state.likeUnlikeError = action.payload?.errors[0];
     });
     // Uploading a new post
     builder.addCase(uploadPost.pending, (state) => {
@@ -159,7 +190,7 @@ const postSlice = createSlice({
     });
     builder.addCase(uploadPost.rejected, (state, action) => {
       state.uploadPostLoading = false;
-      state.uploadPostError = action.response.errors[0];
+      state.uploadPostError = action.response?.errors[0];
       state.displayModal = false;
     });
     // Deleting a post
@@ -200,5 +231,13 @@ const postSlice = createSlice({
 });
 
 export default postSlice.reducer;
-export { loadPosts, likePost, unlikePost, uploadPost, deletePost, updatePost };
+export {
+  loadPosts,
+  loadSinglePost,
+  likePost,
+  unlikePost,
+  uploadPost,
+  deletePost,
+  updatePost,
+};
 export const { showModal, hideModal, updateCurrentPost } = postSlice.actions;
