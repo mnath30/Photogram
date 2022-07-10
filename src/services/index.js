@@ -4,12 +4,12 @@ export {
   loadPostService,
   likePostService,
   unlikePostService,
+  uploadPostService,
 } from "./postServices";
 export {
   loadUsersService,
   followUserService,
-  unfollowUserService,
-} from // getUserBookmarksService,
-// addBookmarkService,
+  unfollowUserService, // getUserBookmarksService,
+} from // addBookmarkService,
 // removeBookmarkService,
 "./userServices";

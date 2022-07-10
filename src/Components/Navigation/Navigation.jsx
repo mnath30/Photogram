@@ -4,10 +4,13 @@ import { NavLink } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { showModal } from "../../features/posts/postSlice";
 
 const Navigation = () => {
   const [displayDropdown, setDisplayDropdown] = useState(false);
   const domNode = useOnClickOutside(() => setDisplayDropdown(false));
+  const dispatch = useDispatch();
 
   return (
     <div className="flex container__nav">
@@ -36,9 +39,14 @@ const Navigation = () => {
                   <i className="fa-solid fa-house fa-lg"></i>
                 </li>
               </NavLink>
+              <span onClick={() => dispatch(showModal())}>
+                <li className="nav-li">
+                  <i className="fa-regular fa-square-plus fa-lg"></i>
+                </li>
+              </span>
               <NavLink to="/explore">
                 <li className="nav-li">
-                  <i className="fa-solid fa-compass fa-lg"></i>
+                  <i className="fa-regular fa-compass fa-lg"></i>
                 </li>
               </NavLink>
               <NavLink to="/explore/people">

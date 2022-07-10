@@ -84,11 +84,12 @@ export const createPostHandler = function (schema, request) {
       likes: {
         likeCount: 0,
         likedBy: [],
-        dislikedBy: [],
       },
+      profile: user.profilePicture,
       username: user.username,
       createdAt: formatDate(),
       updatedAt: formatDate(),
+      comments: [],
     };
     this.db.posts.insert(post);
     return new Response(201, {}, { posts: this.db.posts });
@@ -116,9 +117,7 @@ export const editPostHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -249,9 +248,7 @@ export const deletePostHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
