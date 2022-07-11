@@ -4,12 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { loadPosts } from "./features/posts/postSlice";
 import { loadUsers } from "./features/users/userSlice";
-import { PostUploadModal, Modal } from "./Components";
+import { PostUploadModal, Modal, ProfileModal } from "./Components";
 
 function App() {
   const dispatch = useDispatch();
   const { encodedToken, userAccountName } = useSelector((store) => store.auth);
   const { displayModal } = useSelector((store) => store.posts);
+  const { editProfile } = useSelector((store) => store.users);
 
   useEffect(() => {
     if (encodedToken && userAccountName) {
@@ -24,6 +25,11 @@ function App() {
       {displayModal && (
         <Modal>
           <PostUploadModal />
+        </Modal>
+      )}
+      {editProfile && (
+        <Modal>
+          <ProfileModal />
         </Modal>
       )}
     </div>

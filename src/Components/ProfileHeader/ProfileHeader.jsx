@@ -1,44 +1,57 @@
 import "./profile-header.css";
-import { avatar } from "../../asset";
 import { NavLink } from "react-router-dom";
 
-const ProfileHeader = () => {
-  const username = localStorage.getItem("username");
+const ProfileHeader = ({ userData, userPosts, setDisplayEditModal }) => {
+  const {
+    username,
+    description,
+    fullname,
+    followers,
+    following,
+    profilePicture,
+  } = userData;
+
   return (
     <>
       <div className="grid profileheader__container padding-md">
         <div className="profileheader__icon">
-          <img className="profileheader__image" alt="profile" src={avatar} />
+          <img
+            className="profileheader__image"
+            alt="profile"
+            src={profilePicture}
+          />
         </div>
         <div className="flex-col profileheader__username txt-left">
-          <span className="txt-md profile_name ">UserName</span>
-          <button className="btn profileheader-btn">Edit profile</button>
+          <span className="txt-md profile_name ">{username}</span>
+          <button
+            className="btn profileheader-btn "
+            onClick={setDisplayEditModal}
+          >
+            Edit profile
+          </button>
         </div>
         <div className="profileheader__description">
-          <h4 className="txt-left">Username</h4>
-          <p className="txt-left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            voluptas itaque in, fuga deserunt ipsa! Voluptatum quasi ipsa,.
-          </p>
+          <h4 className="txt-left">{fullname}</h4>
+          <p className="txt-left">{description}</p>
         </div>
       </div>
 
       <div className="flex profileheader__bottom">
         <NavLink to={`/profile/${username}/`}>
           <div className="padding-md">
-            <div>16</div>
+            <div>{userPosts.length}</div>
             <div>Posts</div>
           </div>
         </NavLink>
         <NavLink to={`/profile/${username}/followers`}>
           <div className="padding-md">
-            <div>12</div>
+            <div>{followers.length}</div>
             <div>Followers</div>
           </div>
         </NavLink>
         <NavLink to={`/profile/${username}/following`}>
           <div className="padding-md">
-            <div>10</div>
+            <div>{following.length}</div>
             <div>Following</div>
           </div>
         </NavLink>

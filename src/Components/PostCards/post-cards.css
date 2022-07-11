@@ -69,6 +69,10 @@
   color: var(--secondary-color);
 }
 
+.post_bookmark {
+  margin-left: auto;
+}
+
 @media only screen and (max-width: 470px) {
   .postcard__container {
     margin: 0.8rem 0;

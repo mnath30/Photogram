@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { UserDetails } from "../UserDetails/UserDetails";
 import "./side-section.css";
 
 const SideSection = ({ currentUserName, userList, clickHandler }) => {
+  const navigate = useNavigate();
   return (
     <div className="flex-col padding-sm">
       <UserDetails
@@ -9,6 +11,7 @@ const SideSection = ({ currentUserName, userList, clickHandler }) => {
         source={currentUserName?.profilePicture}
         username={currentUserName?.username}
         btntext="View Profile"
+        handleClick={() => navigate(`/profile/${currentUserName?.username}/`)}
       />
       <p className="suggested-section">Suggestions For You </p>
       {userList.length === 0 && (
@@ -23,6 +26,7 @@ const SideSection = ({ currentUserName, userList, clickHandler }) => {
             btntext="Follow"
             key={user._id}
             handleClick={() => clickHandler(user._id)}
+            userId={user._id}
           />
         ))}
     </div>

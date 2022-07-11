@@ -2,14 +2,17 @@ export { loginService } from "./authServices";
 export { signupService } from "./authServices";
 export {
   loadPostService,
+  loadUserPostService,
   likePostService,
   unlikePostService,
   uploadPostService,
 } from "./postServices";
 export {
   loadUsersService,
+  editProfileService,
   followUserService,
-  unfollowUserService, // getUserBookmarksService,
-} from // addBookmarkService,
-// removeBookmarkService,
-"./userServices";
+  unfollowUserService,
+  getUserBookmarksService,
+  addBookmarkService,
+  removeBookmarkService,
+} from "./userServices";

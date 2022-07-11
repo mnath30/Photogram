@@ -10,23 +10,31 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterUnfollowedUsers, filterUserFeed } from "../../helper";
 import { useEffect } from "react";
 import { loadPosts } from "../../features/posts/postSlice";
-import { loadUsers, followUser } from "../../features/users/userSlice";
+import {
+  loadUsers,
+  followUser,
+  loadBookmarks,
+} from "../../features/users/userSlice";
 
 const Home = () => {
   const { posts, loading } = useSelector((store) => store.posts);
-  const { allUsers, loggedInUser } = useSelector((store) => store.users);
+  const { allUsers, loggedInUser, bookmarks } = useSelector(
+    (store) => store.users
+  );
   const dispatch = useDispatch();
   const encodedToken = localStorage.getItem("encodedToken");
   let userFeed = [];
   let followUsers = [];
+
   useEffect(() => {
     if (!posts) {
       dispatch(loadPosts());
     }
     if (!allUsers && !loggedInUser) {
       dispatch(loadUsers());
+      dispatch(loadBookmarks(encodedToken));
     }
-  }, [posts, allUsers, loggedInUser, dispatch]);
+  }, [posts, allUsers, loggedInUser, dispatch, encodedToken]);
 
   if (loggedInUser?.following && loggedInUser?.username && posts) {
     userFeed = filterUserFeed(
@@ -57,7 +65,12 @@ const Home = () => {
             {!loading && userFeed.length === 0 && <EmptyFeed />}
             {userFeed.length !== 0 &&
               userFeed.map((post) => (
-                <PostCards item={post} key={post._id} dispatchfunc={dispatch} />
+                <PostCards
+                  item={post}
+                  key={post._id}
+                  dispatchfunc={dispatch}
+                  bookmark={bookmarks}
+                />
               ))}
           </div>
           <div className="home__container-side">

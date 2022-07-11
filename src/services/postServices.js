@@ -8,6 +8,10 @@ const loadSinglePostService = async (postId) => {
   return await axios.get(`/api/posts/${postId}`);
 };
 
+// load user specific posts
+const loadUserPostService = async (username) =>
+  await axios.get(`/api/posts/user/${username}`);
+
 // Like and Unlike posts
 const likePostService = async (postId, token) => {
   return await axios.post(
@@ -61,6 +65,7 @@ const updatePostService = async (postData, token) => {
 export {
   loadPostService,
   loadSinglePostService,
+  loadUserPostService,
   likePostService,
   unlikePostService,
   uploadPostService,
