@@ -1,5 +1,4 @@
 import { v4 as uuid } from "uuid";
-import { avatar } from "../../asset";
 import { formatDate } from "../utils/authUtils";
 
 /**
