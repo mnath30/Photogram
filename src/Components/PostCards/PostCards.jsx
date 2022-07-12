@@ -12,12 +12,11 @@ const PostCards = ({ item, dispatchfunc, bookmark }) => {
   const encodedToken = localStorage.getItem("encodedToken");
   const currentUserName = localStorage.getItem("username");
   const likedByUser = likedBy.includes(currentUserName);
-  const { bookmarks } = bookmark;
   let isBookmarked = false;
   const [showPostDropdown, setShowPostDropdown] = useState(false);
 
-  if (bookmarks) {
-    isBookmarked = bookmarks.some((item) => item._id === _id);
+  if (bookmark) {
+    isBookmarked = bookmark.some((item) => item._id === _id);
   }
 
   const handleChange = (e) => {
@@ -58,54 +57,54 @@ const PostCards = ({ item, dispatchfunc, bookmark }) => {
       </div>
       <div className="postcard__container-content flex-col">
         <div className="flex padding-sm postcard_items">
-          {likedByUser ? (
-            <span
-              onClick={() =>
-                unlikeHandler(dispatchfunc, encodedToken, _id, unlikePost)
-              }
+          {/* Like post */}
+          <span
+            className="postcard__like"
+            onClick={() =>
+              likedByUser
+                ? unlikeHandler(dispatchfunc, encodedToken, _id, unlikePost)
+                : likeHandler(dispatchfunc, encodedToken, _id, likePost)
+            }
+          >
+            <i
+              className={`${
+                likedByUser ? "fa-solid  liked" : "fa-regular"
+              } fa-heart fa-lg padding-sm`}
             >
-              <i className="fa-solid fa-heart fa-lg padding-sm postcard__like liked">
-                <span className="postcard_text">{likeCount}</span>
-              </i>
-            </span>
-          ) : (
-            <span
-              onClick={() =>
-                likeHandler(dispatchfunc, encodedToken, _id, likePost)
-              }
-            >
-              <i className="fa-regular fa-heart fa-lg postcard__like padding-sm ">
-                <span className="postcard_text">{likeCount}</span>
-              </i>
-            </span>
-          )}
-          <label htmlFor={_id}>
+              <span className="postcard_text">{likeCount}</span>
+            </i>
+          </span>
+
+          {/* Comment Icon */}
+          <label htmlFor={_id} className="post_comment">
             <i className="fa-regular fa-comment fa-lg padding-sm"></i>
           </label>
-          {isBookmarked ? (
-            <span
-              className="post_bookmark"
-              onClick={() =>
-                removeBookmarkHandler(
-                  dispatchfunc,
-                  removeBookmark,
-                  _id,
-                  encodedToken
-                )
-              }
-            >
-              <i className="fa-solid fa-bookmark fa-lg padding-sm"></i>
-            </span>
-          ) : (
-            <span
-              className="post_bookmark"
-              onClick={() =>
-                addBookmarkHandler(dispatchfunc, addBookmark, _id, encodedToken)
-              }
-            >
-              <i className="fa-regular fa-bookmark fa-lg padding-sm"></i>
-            </span>
-          )}
+
+          {/* Bookmark Post */}
+          <span
+            className="post_bookmark"
+            onClick={() =>
+              isBookmarked
+                ? removeBookmarkHandler(
+                    dispatchfunc,
+                    removeBookmark,
+                    _id,
+                    encodedToken
+                  )
+                : addBookmarkHandler(
+                    dispatchfunc,
+                    addBookmark,
+                    _id,
+                    encodedToken
+                  )
+            }
+          >
+            <i
+              className={`${
+                isBookmarked ? "fa-solid" : "fa-regular"
+              } fa-bookmark fa-lg padding-sm`}
+            ></i>
+          </span>
         </div>
 
         <p className="postcard__container-description padding-sm">
@@ -113,6 +112,8 @@ const PostCards = ({ item, dispatchfunc, bookmark }) => {
           {description}
         </p>
         <div className="hr"></div>
+
+        {/* Comment Input section */}
         <div className="padding-sm flex">
           <label htmlFor={_id}></label>
           <input

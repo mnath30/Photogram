@@ -227,10 +227,10 @@ const userSlice = createSlice({
       state.bookmarkError = action.payload;
     });
     builder.addCase(addBookmark.fulfilled, (state, action) => {
-      state.bookmarks = action.payload;
+      state.bookmarks = action.payload.bookmarks;
     });
     builder.addCase(removeBookmark.fulfilled, (state, action) => {
-      state.bookmarks = action.payload;
+      state.bookmarks = action.payload.bookmarks;
     });
     // Loading other user details
     builder.addCase(getUserDetails.pending, (state) => {

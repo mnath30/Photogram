@@ -13,17 +13,18 @@ import {
 const Profile = () => {
   const dispatch = useDispatch();
   const { loggedInUser, loading } = useSelector((store) => store.users);
-  const { userPost } = useSelector((store) => store.posts);
+  const { userPost, posts } = useSelector((store) => store.posts);
   const encodedToken = localStorage.getItem("encodedToken");
 
   useEffect(() => {
-    if (Object.keys(loggedInUser).length !== 0) {
+    if (Object.keys(loggedInUser).length === 0) {
+      dispatch(loadUsers());
+    } else {
+      console.log(loggedInUser);
       dispatch(loadUserPost(loggedInUser.username));
       dispatch(loadBookmarks(encodedToken));
-    } else {
-      dispatch(loadUsers());
     }
-  }, [loggedInUser, dispatch, encodedToken]);
+  }, [loggedInUser, dispatch, encodedToken, posts]);
 
   const modalDisplayHandler = () => {
     dispatch(editUserProfile());
