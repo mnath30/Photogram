@@ -54,6 +54,7 @@ const Suggestion = () => {
                     fullname={user.fullname}
                     handleClick={() => followHandler(user._id)}
                     btnstyle="primary_btn"
+                    userId={user._id}
                   />
                 ))}
             </div>

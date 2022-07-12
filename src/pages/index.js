@@ -12,3 +12,4 @@ export { Suggestion } from "./Suggestion/Suggestion";
 export { RelatedUsers } from "./RelatedUsers/RelatedUsers";
 export { Followers } from "./RelatedUsers/Followers";
 export { Following } from "./RelatedUsers/Following";
+export { CommonProfile } from "./Profile/CommonProfile";

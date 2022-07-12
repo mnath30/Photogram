@@ -59,3 +59,22 @@ a {
 .error-msg {
   color: var(--secondary-color);
 }
+
+.empty_msg {
+  font-style: italic;
+  margin: 1.8rem;
+  color: var(--secondary-text-color);
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; */
+  border-radius: 10px;
+  background: var(--grey-border);
+}

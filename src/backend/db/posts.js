@@ -1,5 +1,4 @@
 import { v4 as uuid } from "uuid";
-import { avatar } from "../../asset";
 import { formatDate } from "../utils/authUtils";
 
 /**
@@ -19,7 +18,8 @@ export const posts = [
       likedBy: ["john", "janedoe"],
     },
     username: "maitreyee",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -46,7 +46,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "Triperia"],
     },
     username: "janedoe",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -73,7 +74,8 @@ export const posts = [
       likedBy: ["maitreyee"],
     },
     username: "janedoe",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -95,7 +97,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "Wildlife"],
     },
     username: "Triperia",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620674/img5_man4_xyq5iz.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -122,7 +125,8 @@ export const posts = [
       likedBy: ["john"],
     },
     username: "Wildlife",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img4_man3_iolqzl.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -144,7 +148,8 @@ export const posts = [
       likedBy: ["janedoe"],
     },
     username: "john",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -171,7 +176,8 @@ export const posts = [
       likedBy: ["maitreyee", "john"],
     },
     username: "Wildlife",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img4_man3_iolqzl.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -198,7 +204,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "maitreyee",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -220,7 +227,8 @@ export const posts = [
       likedBy: ["janedoe"],
     },
     username: "Triperia",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620674/img5_man4_xyq5iz.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -242,7 +250,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "The_Sports'_enthusiast",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620518/img3_man2_huewlp.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -264,7 +273,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "Triperia",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620674/img5_man4_xyq5iz.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -286,7 +296,8 @@ export const posts = [
       likedBy: ["john", "janedoe"],
     },
     username: "Urban",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620653/img7_girl3_oqr0kb.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -308,7 +319,8 @@ export const posts = [
       likedBy: ["maitreyee", "john", "janedoe"],
     },
     username: "john",
-    profile: avatar,
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     comments: [
@@ -316,6 +328,57 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Hello chef",
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    description: "Flowers from my garden 🌷",
+    image:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1654200181/sample.jpg",
+    info: "flowers",
+    likes: {
+      likeCount: 2,
+      likedBy: ["john", "janedoe"],
+    },
+    username: "maitreyee",
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        username: "john",
+        text: "They look wonderful",
+      },
+      {
+        _id: uuid(),
+        username: "janedoe",
+        text: "So beautiful",
+      },
+    ],
+  },
+  {
+    _id: uuid(),
+    description: "Letsss goooo 🚗",
+    image:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1654200192/samples/ecommerce/car-interior-design.jpg",
+    info: "car",
+    likes: {
+      likeCount: 2,
+      likedBy: ["john", "janedoe"],
+    },
+    username: "Urban",
+    profile:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620653/img7_girl3_oqr0kb.jpg",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        username: "janedoe",
+        text: "Where to this time??",
       },
     ],
   },

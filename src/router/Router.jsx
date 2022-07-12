@@ -14,6 +14,7 @@ import {
   RelatedUsers,
   Followers,
   Following,
+  CommonProfile,
 } from "../pages";
 import { RequiresAuth } from "../helper";
 import Mockman from "mockman-js";
@@ -100,6 +101,14 @@ const Router = () => {
         element={
           <RequiresAuth>
             <SinglePost />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/users/:userId"
+        element={
+          <RequiresAuth>
+            <CommonProfile />
           </RequiresAuth>
         }
       />

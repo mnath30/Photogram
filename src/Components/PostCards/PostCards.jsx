@@ -1,16 +1,23 @@
 import "./post-cards.css";
-import { likeHandler, unlikeHandler } from "../../helper/likeHandlers";
+import { likeHandler, unlikeHandler } from "../../helper";
+import { addBookmarkHandler, removeBookmarkHandler } from "../../helper";
 import { likePost, unlikePost } from "../../features/posts/postSlice";
+import { removeBookmark, addBookmark } from "../../features/users/userSlice";
 import { PostDropdown } from "../ProfileDropdown/PostDropdown";
 import { useState } from "react";
 
-const PostCards = ({ item, dispatchfunc }) => {
+const PostCards = ({ item, dispatchfunc, bookmark }) => {
   const { _id, username, profile, info, image, description, likes } = item;
   const { likeCount, likedBy } = likes;
   const encodedToken = localStorage.getItem("encodedToken");
   const currentUserName = localStorage.getItem("username");
   const likedByUser = likedBy.includes(currentUserName);
+  let isBookmarked = false;
   const [showPostDropdown, setShowPostDropdown] = useState(false);
+
+  if (bookmark) {
+    isBookmarked = bookmark.some((item) => item._id === _id);
+  }
 
   const handleChange = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
@@ -50,28 +57,54 @@ const PostCards = ({ item, dispatchfunc }) => {
       </div>
       <div className="postcard__container-content flex-col">
         <div className="flex padding-sm postcard_items">
-          {likedByUser ? (
-            <span
-              onClick={() =>
-                unlikeHandler(dispatchfunc, encodedToken, _id, unlikePost)
-              }
+          {/* Like post */}
+          <span
+            className="postcard__like"
+            onClick={() =>
+              likedByUser
+                ? unlikeHandler(dispatchfunc, encodedToken, _id, unlikePost)
+                : likeHandler(dispatchfunc, encodedToken, _id, likePost)
+            }
+          >
+            <i
+              className={`${
+                likedByUser ? "fa-solid  liked" : "fa-regular"
+              } fa-heart fa-lg padding-sm`}
             >
-              <i className="fa-solid fa-heart fa-lg padding-sm postcard__like liked">
-                <span className="postcard_text">{likeCount}</span>
-              </i>
-            </span>
-          ) : (
-            <span
-              onClick={() =>
-                likeHandler(dispatchfunc, encodedToken, _id, likePost)
-              }
-            >
-              <i className="fa-regular fa-heart fa-lg postcard__like padding-sm ">
-                <span className="postcard_text">{likeCount}</span>
-              </i>
-            </span>
-          )}
-          <i className="fa-regular fa-bookmark fa-lg padding-sm"></i>
+              <span className="postcard_text">{likeCount}</span>
+            </i>
+          </span>
+
+          {/* Comment Icon */}
+          <label htmlFor={_id} className="post_comment">
+            <i className="fa-regular fa-comment fa-lg padding-sm"></i>
+          </label>
+
+          {/* Bookmark Post */}
+          <span
+            className="post_bookmark"
+            onClick={() =>
+              isBookmarked
+                ? removeBookmarkHandler(
+                    dispatchfunc,
+                    removeBookmark,
+                    _id,
+                    encodedToken
+                  )
+                : addBookmarkHandler(
+                    dispatchfunc,
+                    addBookmark,
+                    _id,
+                    encodedToken
+                  )
+            }
+          >
+            <i
+              className={`${
+                isBookmarked ? "fa-solid" : "fa-regular"
+              } fa-bookmark fa-lg padding-sm`}
+            ></i>
+          </span>
         </div>
 
         <p className="postcard__container-description padding-sm">
@@ -79,11 +112,15 @@ const PostCards = ({ item, dispatchfunc }) => {
           {description}
         </p>
         <div className="hr"></div>
+
+        {/* Comment Input section */}
         <div className="padding-sm flex">
+          <label htmlFor={_id}></label>
           <input
             type="text"
             placeholder="Add a comment..."
             className="padding-sm"
+            id={_id}
           />
           <button className="postcard__container-btn">Post</button>
         </div>

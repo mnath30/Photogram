@@ -1,18 +1,33 @@
 import "./user-posts.css";
-import { data } from "../../helper/data";
-import { Posts } from "../../Components";
+import { Posts, Loader } from "../../Components";
+import { useSelector } from "react-redux";
 
 const UserPost = () => {
-  // Will be replaced with data from the api
-  const dataNew = data.slice(7);
+  const { userPost, userPostLoading, userPostError } = useSelector(
+    (store) => store.posts
+  );
+
   return (
-    <div className="explore__container">
-      <div className="grid explore__grid">
-        {dataNew.map((item, id) => (
-          <Posts post={item} key={id} />
-        ))}
-      </div>
-    </div>
+    <>
+      {userPostLoading && <Loader />}
+      {!userPostLoading && userPost.length !== 0 && (
+        <div className="explore__container">
+          <div className="grid explore__grid">
+            {userPost.map((item, id) => (
+              <Posts post={item} key={id} />
+            ))}
+          </div>
+        </div>
+      )}
+      {!userPostLoading && userPost.length === 0 && (
+        <p className="empty_msg">No Posts Added Yet</p>
+      )}
+      {!userPostLoading && userPostError && (
+        <p className="empty_msg">
+          There was some error in fetching the user posts
+        </p>
+      )}
+    </>
   );
 };
 export { UserPost };

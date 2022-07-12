@@ -13,3 +13,5 @@ export { EmptyFeed } from "./EmptyFeed/EmptyFeed";
 export { Modal } from "./Modal/Modal";
 export { PostUploadModal } from "./Modal/PostUploadModal";
 export { PostDropdown } from "./ProfileDropdown/PostDropdown";
+export { ProfileModal } from "./Modal/ProfileModal";
+export { OtherUserProfileHeader } from "./ProfileHeader/OtherUserProfileHeader";

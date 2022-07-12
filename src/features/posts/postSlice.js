@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   loadPostService,
+  loadUserPostService,
   likePostService,
   unlikePostService,
   uploadPostService,
@@ -30,6 +31,19 @@ const loadSinglePost = createAsyncThunk(
   async (postId, { rejectWithValue }) => {
     try {
       const response = await loadSinglePostService(postId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
+// load user specific posts
+const loadUserPost = createAsyncThunk(
+  "/posts/loadUserPost",
+  async (username, { rejectWithValue }) => {
+    try {
+      const response = await loadUserPostService(username);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
@@ -104,6 +118,9 @@ const initialState = {
   loading: false,
   errormessage: "",
   singlePostLoading: false,
+  userPostLoading: false,
+  userPost: [],
+  userPostError: "",
   singlePostData: {},
   singlePostError: "",
   likeUnlikeError: "",
@@ -161,6 +178,20 @@ const postSlice = createSlice({
     builder.addCase(loadSinglePost.rejected, (state) => {
       state.singlePostLoading = false;
       state.singlePostError = "There was some error in processing your request";
+    });
+    // load user posts
+    builder.addCase(loadUserPost.pending, (state) => {
+      state.userPostLoading = true;
+      state.userPostError = "";
+    });
+    builder.addCase(loadUserPost.fulfilled, (state, action) => {
+      state.userPostLoading = false;
+      state.userPostError = "";
+      state.userPost = action.payload.posts.reverse();
+    });
+    builder.addCase(loadUserPost.rejected, (state, action) => {
+      state.userPostLoading = false;
+      state.userPostError = action.payload;
     });
     // Like and unlike posts
     builder.addCase(likePost.fulfilled, (state, action) => {
@@ -234,6 +265,7 @@ export default postSlice.reducer;
 export {
   loadPosts,
   loadSinglePost,
+  loadUserPost,
   likePost,
   unlikePost,
   uploadPost,
