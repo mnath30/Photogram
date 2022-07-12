@@ -15,4 +15,5 @@ export {
   getUserBookmarksService,
   addBookmarkService,
   removeBookmarkService,
+  getUserDetailsService,
 } from "./userServices";

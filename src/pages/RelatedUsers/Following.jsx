@@ -52,6 +52,7 @@ const Following = () => {
                   fullname={user.fullname}
                   handleClick={() => unFollowHandler(user._id)}
                   btnstyle="secondary_btn"
+                  userId={user._id}
                 />
               ))}
           </div>

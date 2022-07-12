@@ -7,6 +7,7 @@ import {
   addBookmarkService,
   removeBookmarkService,
   getUserBookmarksService,
+  getUserDetailsService,
 } from "../../services";
 
 // Load all users
@@ -98,6 +99,19 @@ const removeBookmark = createAsyncThunk(
   }
 );
 
+// Get user details
+const getUserDetails = createAsyncThunk(
+  "/users/getUserDetails",
+  async (userId, { rejectWithValue }) => {
+    try {
+      const response = await getUserDetailsService(userId);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
+
 const initialState = {
   allUsers: [],
   loggedInUser: {},
@@ -115,6 +129,9 @@ const initialState = {
   editProfileError: "",
   displayEditProfileModal: false,
   editProfile: false,
+  otherUserDetail: {},
+  otherUserLoading: false,
+  otherUserError: "",
 };
 
 const userSlice = createSlice({
@@ -215,6 +232,20 @@ const userSlice = createSlice({
     builder.addCase(removeBookmark.fulfilled, (state, action) => {
       state.bookmarks = action.payload;
     });
+    // Loading other user details
+    builder.addCase(getUserDetails.pending, (state) => {
+      state.otherUserLoading = true;
+      state.otherUserError = "";
+    });
+    builder.addCase(getUserDetails.fulfilled, (state, action) => {
+      state.otherUserLoading = false;
+      state.otherUserDetail = action.payload.user;
+      state.otherUserError = "";
+    });
+    builder.addCase(getUserDetails.rejected, (state, action) => {
+      state.otherUserLoading = false;
+      state.otherUserError = action.payload;
+    });
   },
 });
 
@@ -228,4 +259,5 @@ export {
   removeBookmark,
   addBookmark,
   loadBookmarks,
+  getUserDetails,
 };

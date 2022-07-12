@@ -66,6 +66,10 @@ const removeBookmarkService = async (postId, token) =>
     }
   );
 
+// Get user details
+const getUserDetailsService = async (userId) =>
+  axios.get(`/api/users/${userId}`);
+
 export {
   loadUsersService,
   followUserService,
@@ -74,4 +78,5 @@ export {
   getUserBookmarksService,
   addBookmarkService,
   removeBookmarkService,
+  getUserDetailsService,
 };

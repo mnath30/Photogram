@@ -15,7 +15,8 @@ export const users = [
     email: "maitnath@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
     description: "Life is a daring adventure or nothing at all",
     followers: [],
     following: [],
@@ -29,7 +30,8 @@ export const users = [
     email: "johndoe@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
     description: "Let's have some great food and enjoy the bliss of life",
     followers: [],
     following: [],
@@ -43,7 +45,8 @@ export const users = [
     email: "janedoe@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
     description: "Love music, travelling, exploring and something more...",
     followers: [],
     following: [],
@@ -57,7 +60,8 @@ export const users = [
     email: "sportsenthu@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620518/img3_man2_huewlp.jpg",
     description:
       "What can be better than a great game and an even better sportsmanship",
     followers: [],
@@ -72,7 +76,8 @@ export const users = [
     email: "triperia@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620674/img5_man4_xyq5iz.jpg",
     description: "Let's travel and go on adventures together",
     followers: [],
     following: [],
@@ -86,7 +91,8 @@ export const users = [
     email: "wildlife@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img4_man3_iolqzl.jpg",
     description: "Wildlife explorer",
     followers: [],
     following: [],
@@ -100,7 +106,8 @@ export const users = [
     email: "urban@gmail.com",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    profilePicture: avatar,
+    profilePicture:
+      "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620653/img7_girl3_oqr0kb.jpg",
     description: "The urban lifestyle",
     followers: [],
     following: [],

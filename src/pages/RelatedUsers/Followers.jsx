@@ -36,6 +36,7 @@ const Followers = () => {
                 username={user.username}
                 key={user._id}
                 fullname={user.fullname}
+                userId={user._id}
               />
             ))}
         </div>
