@@ -31,7 +31,6 @@ const Profile = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
       {loading && <Loader />}
       {!loading && Object.keys(loggedInUser).length !== 0 && userPost && (
         <div className="flex-col profile__container">

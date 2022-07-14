@@ -51,7 +51,6 @@ const Home = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
       <div className="home__container">
         <div className="flex">
           <div className="home__container-main">

@@ -61,7 +61,6 @@ const SinglePost = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
       {singlePostLoading && !editingPost && <Loader />}
       {!singlePostLoading && Object.keys(singlePostData).length !== 0 && (
         <div className="singlepost__container">

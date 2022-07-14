@@ -45,7 +45,6 @@ const Suggestion = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
       <div className="suggested-user__container">
         {followUserloading && <Loader />}
         {!followUserloading && (

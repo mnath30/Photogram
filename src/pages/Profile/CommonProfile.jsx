@@ -30,7 +30,6 @@ const CommonProfile = () => {
 
   return (
     <>
-      {/* <Navigation /> */}
       {otherUserLoading && <Loader />}
       {!otherUserLoading &&
         Object.keys(otherUserDetail).length !== 0 &&

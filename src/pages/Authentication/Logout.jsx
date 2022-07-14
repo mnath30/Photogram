@@ -10,7 +10,6 @@ const Logout = () => {
   };
   return (
     <>
-      {/* <Navigation /> */}
       <div className="auth__container">
         <h2 className="auth__container-header">Log Out</h2>
         <p>Are you sure you want to leave?</p>
