@@ -3,12 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserDetails } from "../../features/users/userSlice";
 import { loadUserPost } from "../../features/posts/postSlice";
-import {
-  OtherUserProfileHeader,
-  Loader,
-  Navigation,
-  Posts,
-} from "../../Components";
+import { OtherUserProfileHeader, Loader, Posts } from "../../Components";
 
 const CommonProfile = () => {
   const { userId } = useParams();
@@ -35,7 +30,7 @@ const CommonProfile = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       {otherUserLoading && <Loader />}
       {!otherUserLoading &&
         Object.keys(otherUserDetail).length !== 0 &&

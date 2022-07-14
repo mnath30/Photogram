@@ -1,6 +1,6 @@
 import { Loader, Posts } from "../../Components";
 import "./user-posts.css";
-import { Navigation } from "../../Components";
+// import { Navigation } from "../../Components";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { loadPosts } from "../../features/posts/postSlice";
@@ -17,7 +17,7 @@ const Explore = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       {loading && <Loader />}
       {!loading && posts && (
         <div className="explore__container">

@@ -3,9 +3,11 @@ import "./navigation.css";
 import { NavLink } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 import { showModal } from "../../features/posts/postSlice";
+import { applyFilter } from "../../features/users/userSlice";
+import { SearchBar } from "./SearchBar";
 
 const Navigation = () => {
   const [displayDropdown, setDisplayDropdown] = useState(false);
@@ -21,20 +23,20 @@ const Navigation = () => {
         <NavLink to="/">
           <h3 className="nav-brand">Photogram</h3>
         </NavLink>
-        <div className="nav-search">
-          <input
-            className="nav-search-input"
-            type="text"
-            placeholder="Search"
-          />
-          <button className="nav-search-btn">
-            <i className="fas fa-search"></i>
-          </button>
-        </div>
+        <SearchBar
+          dispatch={dispatch}
+          applyFilter={applyFilter}
+          navsize="nav-search-lg"
+        />
         <div className="nav-options">
           <div className="nav-sub-options">
             <ul className="nav-ul">
-              <NavLink to="/">
+              <NavLink
+                to="/"
+                // // className={(navLink) =>
+                //   navLink.isActive ? "nav-li-active" : ""
+                // }
+              >
                 <li className="nav-li">
                   <i className="fa-solid fa-house fa-lg"></i>
                 </li>

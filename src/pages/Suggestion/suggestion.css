@@ -4,7 +4,7 @@
 }
 
 .suggested-user__container {
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
   padding: 0.8rem;
   width: 50%;
 }
@@ -17,6 +17,24 @@
 .suggested-user__msg {
   text-align: left;
   padding: 1.8rem 0.8rem;
+}
+
+.search_sm {
+  display: none;
+}
+
+.mobile__search {
+  overflow: hidden;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+@media only screen and (max-width: 864px) {
+  .search_sm {
+    display: unset;
+    padding: 0.4rem;
+    margin: 0.4rem;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -34,8 +52,6 @@
 
 @media only screen and (max-width: 590px) {
   .suggested-user__container {
-    margin: auto;
     padding: 0.2rem;
-    width: 100%;
   }
 }

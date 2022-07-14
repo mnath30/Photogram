@@ -1,4 +1,4 @@
-import { Navigation } from "../../Components";
+// import { Navigation } from "../../Components";
 import { NavLink, Outlet } from "react-router-dom";
 import "./related-users.css";
 
@@ -7,7 +7,7 @@ const RelatedUsers = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="subtab__container">
         <div className="subtab__header">
           <ul className="flex subtab__contents">

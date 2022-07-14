@@ -1,7 +1,6 @@
 import "./single-post.css";
 import {
   Comment,
-  Navigation,
   Loader,
   LikeCommentBookmark,
   PostUserHeader,
@@ -62,7 +61,7 @@ const SinglePost = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       {singlePostLoading && !editingPost && <Loader />}
       {!singlePostLoading && Object.keys(singlePostData).length !== 0 && (
         <div className="singlepost__container">

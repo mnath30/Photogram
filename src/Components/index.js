@@ -17,3 +17,4 @@ export { ProfileModal } from "./Modal/ProfileModal";
 export { OtherUserProfileHeader } from "./ProfileHeader/OtherUserProfileHeader";
 export { LikeCommentBookmark } from "./LikeCommentBookmark/LikeCommentBookmark";
 export { PostUserHeader } from "./PostUserHeader/PostUserHeader";
+export { SearchBar } from "./Navigation/SearchBar";

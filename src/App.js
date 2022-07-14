@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { loadPosts } from "./features/posts/postSlice";
 import { loadUsers } from "./features/users/userSlice";
-import { PostUploadModal, Modal, ProfileModal } from "./Components";
+import { PostUploadModal, Modal, ProfileModal, Navigation } from "./Components";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      {encodedToken && <Navigation />}
       <Router />
       {displayModal && (
         <Modal>
