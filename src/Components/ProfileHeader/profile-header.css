@@ -40,6 +40,15 @@
   background-color: var(--primary-color);
 }
 
+.profile__subheader {
+  width: 7rem;
+}
+
+.profile__subheader:hover,
+.profile__bottom:hover {
+  background-color: var(--hover-color);
+}
+
 .unfollow_btn {
   background-color: inherit;
   color: var(--primary-color);
@@ -84,5 +93,9 @@
     justify-self: left;
     width: 5rem;
     height: 5rem;
+  }
+
+  .profile__subheader:hover {
+    background-color: inherit;
   }
 }
