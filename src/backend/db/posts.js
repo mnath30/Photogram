@@ -27,11 +27,15 @@ export const posts = [
         _id: uuid(),
         username: "john",
         text: "See you tomorrow",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
         text: "Great shoes",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -55,11 +59,15 @@ export const posts = [
         _id: uuid(),
         username: "maitreyee",
         text: "Looks delicious",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
         text: "Wow!",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -83,6 +91,8 @@ export const posts = [
         _id: uuid(),
         username: "maitreyee",
         text: "Hi!!",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
       },
     ],
   },
@@ -106,11 +116,15 @@ export const posts = [
         _id: uuid(),
         username: "Wildlife",
         text: "Beautiful",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img4_man3_iolqzl.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
         text: "Wow!",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -134,6 +148,8 @@ export const posts = [
         _id: uuid(),
         username: "john",
         text: "Wow!",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
       },
     ],
   },
@@ -157,11 +173,15 @@ export const posts = [
         _id: uuid(),
         username: "maitreyee",
         text: "Why so soon",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
-        text: ":(",
+        text: "☹",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -185,11 +205,15 @@ export const posts = [
         _id: uuid(),
         username: "maitreyee",
         text: "Hello there ",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
         text: "So cute",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -213,6 +237,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Looks delicious",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -236,6 +262,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "So peacefull",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -259,6 +287,8 @@ export const posts = [
         _id: uuid(),
         username: "maitreyee",
         text: "Indeed!",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620910/img8_girl4_aybrkb.jpg",
       },
     ],
   },
@@ -282,6 +312,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Comming 🏃‍♀️",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -305,6 +337,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Hello",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -328,6 +362,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Hello chef",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -351,11 +387,15 @@ export const posts = [
         _id: uuid(),
         username: "john",
         text: "They look wonderful",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620530/img1_man1_fbinvf.jpg",
       },
       {
         _id: uuid(),
         username: "janedoe",
         text: "So beautiful",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },
@@ -379,6 +419,8 @@ export const posts = [
         _id: uuid(),
         username: "janedoe",
         text: "Where to this time??",
+        profilePicture:
+          "https://res.cloudinary.com/dmb5mqtbx/image/upload/v1657620652/img6_girl2_axuzix.jpg",
       },
     ],
   },

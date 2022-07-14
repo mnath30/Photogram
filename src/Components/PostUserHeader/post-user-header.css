@@ -1,0 +1,23 @@
+.postcard__container-header {
+  align-items: center;
+  border-bottom: 1px solid var(--grey-border);
+  position: relative;
+}
+
+.postcard__dropdown_container {
+  margin-left: auto;
+  width: fit-content;
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.postcard__dropdown_button {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.postcard__dropdown {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+}

@@ -20,7 +20,6 @@ const Profile = () => {
     if (Object.keys(loggedInUser).length === 0) {
       dispatch(loadUsers());
     } else {
-      console.log(loggedInUser);
       dispatch(loadUserPost(loggedInUser.username));
       dispatch(loadBookmarks(encodedToken));
     }

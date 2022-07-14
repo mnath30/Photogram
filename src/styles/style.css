@@ -66,6 +66,42 @@ a {
   color: var(--secondary-text-color);
 }
 
+/* Like , comment and bookmark icons */
+.postcard_items {
+  align-items: center;
+}
+
+.comment__btn_disabled {
+  opacity: 0.5;
+}
+
+.postcard__like {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+}
+
+.post_comment {
+  cursor: pointer;
+}
+
+.liked {
+  color: var(--secondary-color);
+}
+
+.post_bookmark {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.comment_inp {
+  width: 100%;
+}
+
+.comment_inp:focus {
+  outline: none;
+}
+
 /* Scrollbar */
 /* width */
 ::-webkit-scrollbar {

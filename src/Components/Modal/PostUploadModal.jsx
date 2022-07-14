@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   hideModal,
+  loadSinglePost,
   updatePost,
   uploadPost,
 } from "../../features/posts/postSlice";
@@ -8,8 +9,11 @@ import "./modal.css";
 import { uploadImage } from "../../asset";
 import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../Loader/Loader";
+import { useLocation } from "react-router-dom";
 
 const PostUploadModal = () => {
+  const location = useLocation();
+  const postId = location.pathname.split("/");
   const [postModalDetails, setPostModalDetails] = useState({
     imagePreview: "",
     imageInfo: "",
@@ -55,6 +59,7 @@ const PostUploadModal = () => {
             encodedToken,
           })
         );
+        postId[2] && dispatch(loadSinglePost(postId[2]));
       } else {
         dispatch(
           uploadPost({
