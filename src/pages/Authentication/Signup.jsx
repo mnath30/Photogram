@@ -40,6 +40,7 @@ const Signup = () => {
             password,
           })
         );
+        navigate("/");
       } else {
         setEmailError("Enter valid email");
       }
