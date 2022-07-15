@@ -3,3 +3,8 @@ export { filterUserFeed } from "./filterUserFeed";
 export { filterUnfollowedUsers } from "./filterUnfollowedUsers";
 export { likeHandler, unlikeHandler } from "./likeHandlers";
 export { addBookmarkHandler, removeBookmarkHandler } from "./bookmarkHandlers";
+export {
+  getCommentHandler,
+  addCommentHandler,
+  deleteCommentHandler,
+} from "./commentHandler";

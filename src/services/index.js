@@ -17,3 +17,7 @@ export {
   removeBookmarkService,
   getUserDetailsService,
 } from "./userServices";
+export {
+  addPostCommentService,
+  deletePostCommentService,
+} from "./commentServices";

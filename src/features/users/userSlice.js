@@ -132,6 +132,7 @@ const initialState = {
   otherUserDetail: {},
   otherUserLoading: false,
   otherUserError: "",
+  filterText: "",
 };
 
 const userSlice = createSlice({
@@ -143,6 +144,9 @@ const userSlice = createSlice({
     },
     hideEditUserProfile: (state) => {
       state.editProfile = false;
+    },
+    applyFilter: (state, action) => {
+      state.filterText = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -250,7 +254,8 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { editUserProfile, hideEditUserProfile } = userSlice.actions;
+export const { editUserProfile, hideEditUserProfile, applyFilter } =
+  userSlice.actions;
 export {
   loadUsers,
   editProfile,

@@ -38,19 +38,19 @@ const ProfileHeader = ({ userData, userPosts, setDisplayEditModal }) => {
 
       <div className="flex profileheader__bottom">
         <NavLink to={`/profile/${username}/`}>
-          <div className="padding-md">
+          <div className="padding-md profile__subheader">
             <div>{userPosts.length}</div>
             <div>Posts</div>
           </div>
         </NavLink>
         <NavLink to={`/profile/${username}/followers`}>
-          <div className="padding-md">
+          <div className="padding-md profile__subheader">
             <div>{followers.length}</div>
             <div>Followers</div>
           </div>
         </NavLink>
         <NavLink to={`/profile/${username}/following`}>
-          <div className="padding-md">
+          <div className="padding-md profile__subheader">
             <div>{following.length}</div>
             <div>Following</div>
           </div>
@@ -59,7 +59,9 @@ const ProfileHeader = ({ userData, userPosts, setDisplayEditModal }) => {
       <div className="flex  profileheader__bottom">
         <NavLink
           to={`/profile/${username}/`}
-          className={({ isActive }) => (isActive ? `nav-active` : ``)}
+          className={({ isActive }) =>
+            isActive ? `nav-active` : `profile__bottom`
+          }
         >
           <div className="nav-btn">
             <div>
@@ -69,7 +71,9 @@ const ProfileHeader = ({ userData, userPosts, setDisplayEditModal }) => {
         </NavLink>
         <NavLink
           to={`/profile/${username}/saved`}
-          className={({ isActive }) => (isActive ? `nav-active` : ``)}
+          className={({ isActive }) =>
+            isActive ? `nav-active` : `profile__bottom`
+          }
         >
           <div className="nav-btn">
             <div>

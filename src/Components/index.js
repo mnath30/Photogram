@@ -15,3 +15,6 @@ export { PostUploadModal } from "./Modal/PostUploadModal";
 export { PostDropdown } from "./ProfileDropdown/PostDropdown";
 export { ProfileModal } from "./Modal/ProfileModal";
 export { OtherUserProfileHeader } from "./ProfileHeader/OtherUserProfileHeader";
+export { LikeCommentBookmark } from "./LikeCommentBookmark/LikeCommentBookmark";
+export { PostUserHeader } from "./PostUserHeader/PostUserHeader";
+export { SearchBar } from "./Navigation/SearchBar";

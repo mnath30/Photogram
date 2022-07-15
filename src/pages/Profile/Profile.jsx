@@ -1,4 +1,4 @@
-import { ProfileHeader, Navigation, Loader } from "../../Components";
+import { ProfileHeader, Loader } from "../../Components";
 import "./profile.css";
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,7 +20,6 @@ const Profile = () => {
     if (Object.keys(loggedInUser).length === 0) {
       dispatch(loadUsers());
     } else {
-      console.log(loggedInUser);
       dispatch(loadUserPost(loggedInUser.username));
       dispatch(loadBookmarks(encodedToken));
     }
@@ -32,7 +31,6 @@ const Profile = () => {
 
   return (
     <>
-      <Navigation />
       {loading && <Loader />}
       {!loading && Object.keys(loggedInUser).length !== 0 && userPost && (
         <div className="flex-col profile__container">

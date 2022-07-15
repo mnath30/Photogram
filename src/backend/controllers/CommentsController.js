@@ -40,9 +40,7 @@ export const addPostCommentHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }
@@ -53,7 +51,8 @@ export const addPostCommentHandler = function (schema, request) {
       _id: uuid(),
       ...commentData,
       username: user.username,
-      votes: { upvotedBy: [], downvotedBy: [] },
+      profilePicture: user.profilePicture,
+      // votes: { upvotedBy: [], downvotedBy: [] },
       createdAt: formatDate(),
       updatedAt: formatDate(),
     };
@@ -135,9 +134,7 @@ export const deletePostCommentHandler = function (schema, request) {
         404,
         {},
         {
-          errors: [
-            "The username you entered is not Registered. Not Found error",
-          ],
+          errors: ["The username you entered is not Registered."],
         }
       );
     }

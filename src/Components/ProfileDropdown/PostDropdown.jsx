@@ -1,5 +1,5 @@
 import "./profile-dropdown.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateCurrentPost, deletePost } from "../../features/posts/postSlice";
 
 const PostDropdown = ({
@@ -11,6 +11,8 @@ const PostDropdown = ({
   encodedToken,
   closePost,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={className}>
       <ul className="dropdown__container">
@@ -34,7 +36,9 @@ const PostDropdown = ({
                 updaterFunc(
                   deletePost({ postID: postDetail._id, encodedToken })
                 );
+
                 closePost(false);
+                currentPost && navigate("/");
               }}
             >
               <li className="dropdown__items">Delete Post</li>

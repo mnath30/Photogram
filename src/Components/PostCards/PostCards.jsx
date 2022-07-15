@@ -1,19 +1,21 @@
 import "./post-cards.css";
-import { likeHandler, unlikeHandler } from "../../helper";
-import { addBookmarkHandler, removeBookmarkHandler } from "../../helper";
-import { likePost, unlikePost } from "../../features/posts/postSlice";
-import { removeBookmark, addBookmark } from "../../features/users/userSlice";
-import { PostDropdown } from "../ProfileDropdown/PostDropdown";
+import { addCommentHandler } from "../../helper";
+import { loadPosts } from "../../features/posts/postSlice";
+import { addPostComment } from "../../features/comments/commentSlice";
+import { PostUserHeader } from "../PostUserHeader/PostUserHeader";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { LikeCommentBookmark } from "../LikeCommentBookmark/LikeCommentBookmark";
 
 const PostCards = ({ item, dispatchfunc, bookmark }) => {
-  const { _id, username, profile, info, image, description, likes } = item;
+  const { _id, username, info, image, description, likes, comments } = item;
   const { likeCount, likedBy } = likes;
   const encodedToken = localStorage.getItem("encodedToken");
   const currentUserName = localStorage.getItem("username");
   const likedByUser = likedBy.includes(currentUserName);
   let isBookmarked = false;
   const [showPostDropdown, setShowPostDropdown] = useState(false);
+  const [commentText, setCommentText] = useState("");
 
   if (bookmark) {
     isBookmarked = bookmark.some((item) => item._id === _id);
@@ -27,90 +29,36 @@ const PostCards = ({ item, dispatchfunc, bookmark }) => {
 
   return (
     <div className="postcard__container flex-col">
-      <div className="flex postcard__container-header padding-sm">
-        <img src={profile} alt={username} className="avatar" />
-        <h4 className="padding-sm">{username}</h4>
-        <span
-          className="postcard__dropdown_container"
-          onBlur={(e) => handleChange(e)}
-        >
-          <button
-            className="postcard__dropdown_button"
-            onClick={() => setShowPostDropdown((prev) => !prev)}
-          >
-            <i className="fa-solid fa-ellipsis fa-lg"></i>
-            {showPostDropdown && (
-              <PostDropdown
-                className="postcard__dropdown"
-                postDetail={item}
-                updaterFunc={dispatchfunc}
-                encodedToken={encodedToken}
-                currentUserPost={username === currentUserName}
-                closePost={setShowPostDropdown}
-              />
-            )}
-          </button>
-        </span>
-      </div>
+      <PostUserHeader
+        setShowPostDropdown={setShowPostDropdown}
+        showPostDropdown={showPostDropdown}
+        item={item}
+        dispatchfunc={dispatchfunc}
+        encodedToken={encodedToken}
+        currentUserName={currentUserName}
+        handleChange={handleChange}
+      />
+      {/* Post Image section */}
       <div className="postcard__container-image">
         <img src={image} alt={info} className="responsive-img" />
       </div>
       <div className="postcard__container-content flex-col">
-        <div className="flex padding-sm postcard_items">
-          {/* Like post */}
-          <span
-            className="postcard__like"
-            onClick={() =>
-              likedByUser
-                ? unlikeHandler(dispatchfunc, encodedToken, _id, unlikePost)
-                : likeHandler(dispatchfunc, encodedToken, _id, likePost)
-            }
-          >
-            <i
-              className={`${
-                likedByUser ? "fa-solid  liked" : "fa-regular"
-              } fa-heart fa-lg padding-sm`}
-            >
-              <span className="postcard_text">{likeCount}</span>
-            </i>
-          </span>
-
-          {/* Comment Icon */}
-          <label htmlFor={_id} className="post_comment">
-            <i className="fa-regular fa-comment fa-lg padding-sm"></i>
-          </label>
-
-          {/* Bookmark Post */}
-          <span
-            className="post_bookmark"
-            onClick={() =>
-              isBookmarked
-                ? removeBookmarkHandler(
-                    dispatchfunc,
-                    removeBookmark,
-                    _id,
-                    encodedToken
-                  )
-                : addBookmarkHandler(
-                    dispatchfunc,
-                    addBookmark,
-                    _id,
-                    encodedToken
-                  )
-            }
-          >
-            <i
-              className={`${
-                isBookmarked ? "fa-solid" : "fa-regular"
-              } fa-bookmark fa-lg padding-sm`}
-            ></i>
-          </span>
-        </div>
-
+        <LikeCommentBookmark
+          dispatchfunc={dispatchfunc}
+          postId={_id}
+          likedByUser={likedByUser}
+          isBookmarked={isBookmarked}
+          likeCount={likeCount}
+        />
         <p className="postcard__container-description padding-sm">
           <strong>{username} </strong>
           {description}
         </p>
+        {comments.length !== 0 && (
+          <Link to={`/post/${_id}`} className="comments_text">
+            View all {comments.length} comments
+          </Link>
+        )}
         <div className="hr"></div>
 
         {/* Comment Input section */}
@@ -119,10 +67,33 @@ const PostCards = ({ item, dispatchfunc, bookmark }) => {
           <input
             type="text"
             placeholder="Add a comment..."
-            className="padding-sm"
+            className="padding-sm comment_inp"
             id={_id}
+            value={commentText}
+            onChange={(e) => setCommentText(e.target.value)}
+            maxLength="100"
           />
-          <button className="postcard__container-btn">Post</button>
+          <button
+            className={`${
+              commentText.length === 0 && "comment__btn_disabled"
+            } postcard__container-btn`}
+            disabled={commentText.length === 0 ? true : false}
+            onClick={() => {
+              addCommentHandler(
+                _id,
+                dispatchfunc,
+                addPostComment,
+                {
+                  text: commentText,
+                },
+                encodedToken
+              );
+              dispatchfunc(loadPosts());
+              setCommentText("");
+            }}
+          >
+            Post
+          </button>
         </div>
       </div>
     </div>

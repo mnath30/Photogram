@@ -1,10 +1,4 @@
-import {
-  Loader,
-  Navigation,
-  PostCards,
-  SideSection,
-  EmptyFeed,
-} from "../../Components";
+import { Loader, PostCards, SideSection, EmptyFeed } from "../../Components";
 import "./home.css";
 import { useSelector, useDispatch } from "react-redux";
 import { filterUnfollowedUsers, filterUserFeed } from "../../helper";
@@ -57,7 +51,6 @@ const Home = () => {
 
   return (
     <>
-      <Navigation />
       <div className="home__container">
         <div className="flex">
           <div className="home__container-main">
