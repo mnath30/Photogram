@@ -10,9 +10,9 @@
 
 
 ### Features
-The web application allows the users to upload posts, edit posts and also delete their own posts. Once the user is logged in, they are navigated to their *Home* page where they will be able to see their own posts and the posts upload by the users they follow. They will be able to like, comment and bookmark the posts. The users can follow other users from the *Suggested* users page to see their posts in their home page.
+The web application allows the users to upload posts, edit posts and also delete their own posts. Once the user is logged in, they are navigated to their *Home* page where they will be able to see their own posts and the posts uploaded by the users they follow. They will be able to like, comment and bookmark the posts. The users can follow other users from the *Suggested* users page to see their posts in their home page. On clicking on the username of the other users, the profile page of that user will be displayed.
 
-Users can see the posts uploaded by all the other users from the *Explore* page. On clicking on any posts from the explore posts page, users will be able to see that post.
+Users can see the posts uploaded by all the other users from the *Explore* page. On clicking on any posts from the explore posts page, users will be able to see that post. Logged in user can navigate to their *Profile* page to update their profile bio and profile picture. They can see their posts, their bookmarked posts, followers and following from their profile page.
 
 ### Pages
 
