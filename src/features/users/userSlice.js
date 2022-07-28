@@ -178,6 +178,11 @@ const userSlice = createSlice({
       state.editProfileError = "";
       state.loggedInUser = action.payload.user;
       state.editProfile = false;
+      state.allUsers = state.allUsers.map((user) =>
+        user.username === action.payload.user.username
+          ? action.payload.user
+          : user
+      );
     });
     builder.addCase(editProfile.rejected, (state, action) => {
       state.editProfileLoading = false;
