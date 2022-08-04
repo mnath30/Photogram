@@ -85,6 +85,10 @@
   margin: 0.8rem 2.8rem;
 }
 
+.nav-li-active .nav-li {
+  opacity: 1;
+}
+
 @media only screen and (max-width: 960px) {
   .navigation {
     width: 90%;

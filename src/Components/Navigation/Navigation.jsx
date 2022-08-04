@@ -1,6 +1,6 @@
 import { avatar } from "../../asset";
 import "./navigation.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useOnClickOutside } from "../../hooks";
 import { ProfileDropdown } from "../ProfileDropdown/ProfileDropdown";
 import { useDispatch } from "react-redux";
@@ -13,6 +13,8 @@ const Navigation = () => {
   const [displayDropdown, setDisplayDropdown] = useState(false);
   const domNode = useOnClickOutside(() => setDisplayDropdown(false));
   const dispatch = useDispatch();
+  const location = useLocation();
+  const path = location.pathname;
 
   return (
     <div className="flex container__nav">
@@ -33,26 +35,34 @@ const Navigation = () => {
             <ul className="nav-ul">
               <NavLink
                 to="/"
-                // // className={(navLink) =>
-                //   navLink.isActive ? "nav-li-active" : ""
-                // }
+                className={(navLink) =>
+                  navLink.isActive ? "nav-li-active" : ""
+                }
               >
-                <li className="nav-li">
+                <li className="nav-li" title="Home">
                   <i className="fa-solid fa-house fa-lg"></i>
                 </li>
               </NavLink>
               <span onClick={() => dispatch(showModal())}>
-                <li className="nav-li">
+                <li className="nav-li" title="Upload Post">
                   <i className="fa-regular fa-square-plus fa-lg"></i>
                 </li>
               </span>
-              <NavLink to="/explore">
-                <li className="nav-li">
+              <NavLink
+                to="/explore"
+                className={path === "/explore" ? "nav-li-active" : ""}
+              >
+                <li className="nav-li" title="Explore Posts">
                   <i className="fa-regular fa-compass fa-lg"></i>
                 </li>
               </NavLink>
-              <NavLink to="/explore/people">
-                <li className="nav-li">
+              <NavLink
+                to="/explore/people"
+                className={(navLink) =>
+                  navLink.isActive ? "nav-li-active" : ""
+                }
+              >
+                <li className="nav-li" title="People">
                   <i className="fa-regular fa-heart fa-lg"></i>
                 </li>
               </NavLink>
@@ -60,6 +70,7 @@ const Navigation = () => {
                 onClick={() => setDisplayDropdown((prev) => !prev)}
                 className="nav-li-profile"
                 ref={domNode}
+                title="User Profile"
               >
                 <img src={avatar} alt="john doe" className="avatar xs" />
                 {displayDropdown && (

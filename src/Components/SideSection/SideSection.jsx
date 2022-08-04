@@ -12,6 +12,7 @@ const SideSection = ({ currentUserName, userList, clickHandler }) => {
         username={currentUserName?.username}
         btntext="View Profile"
         handleClick={() => navigate(`/profile/${currentUserName?.username}/`)}
+        classStyle="current__user_detail"
       />
       <p className="suggested-section">Suggestions For You </p>
       {userList.length === 0 && (

@@ -3,5 +3,6 @@ import emptyfeed from "./empty_feed.svg";
 import error from "./error.svg";
 import pageNotFound from "./page_not_found.svg";
 import uploadImage from "./uploadImage.svg";
+import banner from "./banner.svg";
 
-export { avatar, emptyfeed, error, pageNotFound, uploadImage };
+export { avatar, emptyfeed, error, pageNotFound, uploadImage, banner };
