@@ -81,10 +81,10 @@ const PostUploadModal = () => {
   };
 
   return (
-    <div className="modal__background">
+    <div className="modal__background" onClick={() => dispatch(hideModal())}>
       {uploadPostLoading && !postModalDetails.showUploadContainer && <Loader />}
       {!uploadPostLoading && postModalDetails.showUploadContainer && (
-        <div className="modal__container">
+        <div className="modal__container" onClick={(e) => e.stopPropagation()}>
           {/* Header Section */}
           <div className="modal__header">
             <p className="txt-md padding-sm txt-center">Create New Post</p>
@@ -104,19 +104,17 @@ const PostUploadModal = () => {
                 className="modal__inp"
                 onChange={handleImageSelection}
               />
+              {/* default image when no image is uploaded */}
+              {!postModalDetails.imagePreview && (
+                <div className="image__container">
+                  <img
+                    src={uploadImage}
+                    alt="upload-placeholder"
+                    className="modal__img"
+                  />
+                </div>
+              )}
             </label>
-
-            {/* default image when no image is uploaded */}
-            {!postModalDetails.imagePreview && (
-              <div className="image__container">
-                <img
-                  src={uploadImage}
-                  alt="upload-placeholder"
-                  className="modal__img"
-                />
-              </div>
-            )}
-
             {/* Image uploaded by user */}
             {postModalDetails.imagePreview && (
               <div className="image__container">

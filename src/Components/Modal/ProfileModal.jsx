@@ -72,10 +72,13 @@ const ProfileModal = () => {
   };
 
   return (
-    <div className="modal__background">
+    <div
+      className="modal__background"
+      onClick={() => dispatch(hideEditUserProfile())}
+    >
       {editProfileLoading && !userProfileData.displayProfileModal && <Loader />}
       {!editProfileLoading && userProfileData.displayProfileModal && (
-        <div className="modal__container">
+        <div className="modal__container" onClick={(e) => e.stopPropagation()}>
           {/* Header Section */}
           <div className="modal__header">
             <p className="txt-md padding-sm txt-center">Update Profile</p>

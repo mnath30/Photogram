@@ -1,11 +1,18 @@
 import "./user-details.css";
 import { Link } from "react-router-dom";
 
-const UserDetails = ({ source, username, btntext, handleClick, userId }) => {
+const UserDetails = ({
+  source,
+  username,
+  btntext,
+  handleClick,
+  userId,
+  classStyle,
+}) => {
   const currentuser = localStorage.getItem("username");
 
   return (
-    <div className="flex padding-sm userdetails__container">
+    <div className={`flex padding-sm userdetails__container ${classStyle}`}>
       <img src={source} alt="userprofile" className="avatar" />
       {username !== currentuser ? (
         <Link
